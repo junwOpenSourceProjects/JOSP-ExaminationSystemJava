@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 *Package:wo1261931780.JOSPexaminationSystemJava.entity
 *@author liujiajun_junw
 *@Date 2023-03-11-17  星期日
-*@description 
+*@description
 */
 /**
     * 2023年上海交大各学院名称
@@ -46,7 +46,7 @@ public class College implements Serializable {
     @TableField(value = "academy_code")
     @ApiModelProperty(value="学院代码")
     @Schema(description="学院代码")
-    private Integer academyCode;
+    private String academyCode;
 
     /**
      * 学院名称

@@ -22,15 +22,13 @@ import wo1261931780.JOSPexaminationSystemJava.service.ReviewListService;
  * @description
  */
 @RestController
-@RequestMapping("/ReviewListMarxism")
-public class ReviewListMarxismController {
-	
-	
+@RequestMapping("/ReviewListAll")
+public class ReviewListAllController {
 	@Autowired
 	private ReviewListService reviewListService;
 	
 	@GetMapping("/list")
-	public ShowResult<Page<ReviewList>> showMeMaxismReviewListPage(@RequestParam Integer page
+	public ShowResult<Page<ReviewList>> showMeAllReviewListPage(@RequestParam Integer page
 			, @RequestParam Integer limit
 			, @RequestParam String sort
 			, String studentName, String subjectCode, String type) {
@@ -39,8 +37,7 @@ public class ReviewListMarxismController {
 		pageInfo.setSize(limit);// 每页条数
 		LambdaQueryWrapper<ReviewList> lambdaQueryWrapper = new LambdaQueryWrapper<>();
 		lambdaQueryWrapper.like(studentName != null, ReviewList::getStudentName, studentName);
-		//lambdaQueryWrapper.eq(ReviewList::getSubjectName, "马克思主义理论");
-		lambdaQueryWrapper.eq(ReviewList::getSubjectCode, subjectCode);
+		lambdaQueryWrapper.like(ReviewList::getSubjectCode, subjectCode);// 没有设置专业的时候查询所有
 		if (sort.equals("0")) {
 			lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
 		} else {
@@ -51,7 +48,7 @@ public class ReviewListMarxismController {
 		return ShowResult.sendSuccess(testPage);
 	}
 	@PostMapping("/insertOrUpdate")
-	public ShowResult<ReviewList> insertOrUpdateMaxismReviewList(ReviewList reviewList) {
+	public ShowResult<ReviewList> insertOrUpdateAllReviewList(ReviewList reviewList) {
 		int saveOrUpdate = reviewListService.insertOrUpdate(reviewList);
 		if (saveOrUpdate!=0) {
 			return ShowResult.sendSuccess(reviewList);

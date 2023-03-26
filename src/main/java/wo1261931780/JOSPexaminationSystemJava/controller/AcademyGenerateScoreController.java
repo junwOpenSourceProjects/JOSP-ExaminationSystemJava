@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import wo1261931780.JOSPexaminationSystemJava.config.ShowResult;
-import wo1261931780.JOSPexaminationSystemJava.entity.ReviewList;
-import wo1261931780.JOSPexaminationSystemJava.service.ReviewListService;
+import wo1261931780.JOSPexaminationSystemJava.entity.AcademyGenerateScore;
+import wo1261931780.JOSPexaminationSystemJava.entity.NationalLine;
+import wo1261931780.JOSPexaminationSystemJava.service.AcademyGenerateScoreService;
+import wo1261931780.JOSPexaminationSystemJava.service.NationalLineService;
 
 /**
  * Created by Intellij IDEA.
@@ -22,39 +24,29 @@ import wo1261931780.JOSPexaminationSystemJava.service.ReviewListService;
  * @description
  */
 @RestController
-@RequestMapping("/ReviewListMarxism")
-public class ReviewListMarxismController {
-	
-	
+@RequestMapping("/AcademyGenerateScore")
+public class AcademyGenerateScoreController {
 	@Autowired
-	private ReviewListService reviewListService;
+	private AcademyGenerateScoreService academyGenerateScoreService;
 	
 	@GetMapping("/list")
-	public ShowResult<Page<ReviewList>> showMeMaxismReviewListPage(@RequestParam Integer page
+	public ShowResult<Page<AcademyGenerateScore>> showMeAcademyGenerateScorePage(@RequestParam Integer page
 			, @RequestParam Integer limit
 			, @RequestParam String sort
 			, String studentName, String subjectCode, String type) {
-		Page<ReviewList> pageInfo = new Page<>();// 页码，每页条数
+		Page<AcademyGenerateScore> pageInfo = new Page<>();// 页码，每页条数
 		pageInfo.setCurrent(page);// 当前页
 		pageInfo.setSize(limit);// 每页条数
-		LambdaQueryWrapper<ReviewList> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-		lambdaQueryWrapper.like(studentName != null, ReviewList::getStudentName, studentName);
-		//lambdaQueryWrapper.eq(ReviewList::getSubjectName, "马克思主义理论");
-		lambdaQueryWrapper.eq(ReviewList::getSubjectCode, subjectCode);
-		if (sort.equals("0")) {
-			lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
-		} else {
-			lambdaQueryWrapper.orderByAsc(ReviewList::getScoreTotal);
-		}
+		LambdaQueryWrapper<AcademyGenerateScore> lambdaQueryWrapper = new LambdaQueryWrapper<>();
 		
-		Page<ReviewList> testPage = reviewListService.page(pageInfo, lambdaQueryWrapper);
+		Page<AcademyGenerateScore> testPage = academyGenerateScoreService.page(pageInfo, lambdaQueryWrapper);
 		return ShowResult.sendSuccess(testPage);
 	}
 	@PostMapping("/insertOrUpdate")
-	public ShowResult<ReviewList> insertOrUpdateMaxismReviewList(ReviewList reviewList) {
-		int saveOrUpdate = reviewListService.insertOrUpdate(reviewList);
+	public ShowResult<AcademyGenerateScore> insertOrUpdateAcademyGenerateScore(AcademyGenerateScore academyGenerateScore) {
+		int saveOrUpdate = academyGenerateScoreService.insertOrUpdate(academyGenerateScore);
 		if (saveOrUpdate!=0) {
-			return ShowResult.sendSuccess(reviewList);
+			return ShowResult.sendSuccess(academyGenerateScore);
 		} else {
 			return ShowResult.sendError("保存失败");
 		}

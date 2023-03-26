@@ -9,7 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import wo1261931780.JOSPexaminationSystemJava.config.ShowResult;
+import wo1261931780.JOSPexaminationSystemJava.entity.NationalLine;
 import wo1261931780.JOSPexaminationSystemJava.entity.ReviewList;
+import wo1261931780.JOSPexaminationSystemJava.service.NationalLineService;
 import wo1261931780.JOSPexaminationSystemJava.service.ReviewListService;
 
 /**
@@ -22,39 +24,38 @@ import wo1261931780.JOSPexaminationSystemJava.service.ReviewListService;
  * @description
  */
 @RestController
-@RequestMapping("/ReviewListMarxism")
-public class ReviewListMarxismController {
-	
-	
+@RequestMapping("/NationLine")
+public class NationLineController {
 	@Autowired
-	private ReviewListService reviewListService;
+	private NationalLineService nationalLineService;
 	
 	@GetMapping("/list")
-	public ShowResult<Page<ReviewList>> showMeMaxismReviewListPage(@RequestParam Integer page
+	public ShowResult<Page<NationalLine>> showMeAllNationalLinePage(@RequestParam Integer page
 			, @RequestParam Integer limit
 			, @RequestParam String sort
-			, String studentName, String subjectCode, String type) {
-		Page<ReviewList> pageInfo = new Page<>();// 页码，每页条数
+			, String studentName, String studentClass, String degreeType) {
+		Page<NationalLine> pageInfo = new Page<>();// 页码，每页条数
 		pageInfo.setCurrent(page);// 当前页
 		pageInfo.setSize(limit);// 每页条数
-		LambdaQueryWrapper<ReviewList> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-		lambdaQueryWrapper.like(studentName != null, ReviewList::getStudentName, studentName);
-		//lambdaQueryWrapper.eq(ReviewList::getSubjectName, "马克思主义理论");
-		lambdaQueryWrapper.eq(ReviewList::getSubjectCode, subjectCode);
+		LambdaQueryWrapper<NationalLine> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+		lambdaQueryWrapper.like(studentName != null, NationalLine::getSubjectClass, studentName);
+		lambdaQueryWrapper.like(NationalLine::getStudentClass, studentClass);
+		lambdaQueryWrapper.like(NationalLine::getDegreeType, degreeType);
 		if (sort.equals("0")) {
-			lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
+			lambdaQueryWrapper.orderByAsc(NationalLine::getDegreeType).orderByDesc(NationalLine::getScoreTotal);
 		} else {
-			lambdaQueryWrapper.orderByAsc(ReviewList::getScoreTotal);
+			lambdaQueryWrapper.orderByAsc(NationalLine::getDegreeType).orderByAsc(NationalLine::getScoreTotal);
 		}
 		
-		Page<ReviewList> testPage = reviewListService.page(pageInfo, lambdaQueryWrapper);
+		Page<NationalLine> testPage = nationalLineService.page(pageInfo, lambdaQueryWrapper);
 		return ShowResult.sendSuccess(testPage);
 	}
+	
 	@PostMapping("/insertOrUpdate")
-	public ShowResult<ReviewList> insertOrUpdateMaxismReviewList(ReviewList reviewList) {
-		int saveOrUpdate = reviewListService.insertOrUpdate(reviewList);
-		if (saveOrUpdate!=0) {
-			return ShowResult.sendSuccess(reviewList);
+	public ShowResult<NationalLine> insertOrUpdateAllNationalLine(NationalLine nationalLine) {
+		int saveOrUpdate = nationalLineService.insertOrUpdate(nationalLine);
+		if (saveOrUpdate != 0) {
+			return ShowResult.sendSuccess(nationalLine);
 		} else {
 			return ShowResult.sendError("保存失败");
 		}

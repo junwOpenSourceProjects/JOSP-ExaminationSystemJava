@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import wo1261931780.JOSPexaminationSystemJava.config.ShowResult;
-import wo1261931780.JOSPexaminationSystemJava.entity.ReviewList;
-import wo1261931780.JOSPexaminationSystemJava.service.ReviewListService;
+import wo1261931780.JOSPexaminationSystemJava.entity.AcademyLine;
+import wo1261931780.JOSPexaminationSystemJava.entity.NationalLine;
+import wo1261931780.JOSPexaminationSystemJava.service.AcademyLineService;
+import wo1261931780.JOSPexaminationSystemJava.service.NationalLineService;
 
 /**
  * Created by Intellij IDEA.
@@ -22,39 +24,29 @@ import wo1261931780.JOSPexaminationSystemJava.service.ReviewListService;
  * @description
  */
 @RestController
-@RequestMapping("/ReviewListMarxism")
-public class ReviewListMarxismController {
-	
-	
+@RequestMapping("/AcademyLine")
+public class AcademyLineController {
 	@Autowired
-	private ReviewListService reviewListService;
+	private AcademyLineService academyLineService;
 	
 	@GetMapping("/list")
-	public ShowResult<Page<ReviewList>> showMeMaxismReviewListPage(@RequestParam Integer page
+	public ShowResult<Page<AcademyLine>> showMeAcademyLinePage(@RequestParam Integer page
 			, @RequestParam Integer limit
 			, @RequestParam String sort
 			, String studentName, String subjectCode, String type) {
-		Page<ReviewList> pageInfo = new Page<>();// 页码，每页条数
+		Page<AcademyLine> pageInfo = new Page<>();// 页码，每页条数
 		pageInfo.setCurrent(page);// 当前页
 		pageInfo.setSize(limit);// 每页条数
-		LambdaQueryWrapper<ReviewList> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-		lambdaQueryWrapper.like(studentName != null, ReviewList::getStudentName, studentName);
-		//lambdaQueryWrapper.eq(ReviewList::getSubjectName, "马克思主义理论");
-		lambdaQueryWrapper.eq(ReviewList::getSubjectCode, subjectCode);
-		if (sort.equals("0")) {
-			lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
-		} else {
-			lambdaQueryWrapper.orderByAsc(ReviewList::getScoreTotal);
-		}
+		LambdaQueryWrapper<AcademyLine> lambdaQueryWrapper = new LambdaQueryWrapper<>();
 		
-		Page<ReviewList> testPage = reviewListService.page(pageInfo, lambdaQueryWrapper);
+		Page<AcademyLine> testPage = academyLineService.page(pageInfo, lambdaQueryWrapper);
 		return ShowResult.sendSuccess(testPage);
 	}
 	@PostMapping("/insertOrUpdate")
-	public ShowResult<ReviewList> insertOrUpdateMaxismReviewList(ReviewList reviewList) {
-		int saveOrUpdate = reviewListService.insertOrUpdate(reviewList);
+	public ShowResult<AcademyLine> insertOrUpdateAcademyLine(AcademyLine academyLine) {
+		int saveOrUpdate = academyLineService.insertOrUpdate(academyLine);
 		if (saveOrUpdate!=0) {
-			return ShowResult.sendSuccess(reviewList);
+			return ShowResult.sendSuccess(academyLine);
 		} else {
 			return ShowResult.sendError("保存失败");
 		}

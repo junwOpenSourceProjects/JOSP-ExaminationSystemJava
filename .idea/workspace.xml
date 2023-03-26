@@ -5,9 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fe68f11-677b-4f2c-9684-ea1d372db39b" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/AcademyGenerateScoreController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/AcademyLineController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/CollegeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/CollegeLineController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/NationLineController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/ReviewListAllController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/ReviewListMarxismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/ReviewListMarxismController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/ReviewList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/ReviewList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/College.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/College.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,6 +25,19 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="2eb7c940-5bba-4bfd-8a22-81883cf51a81" />
+        <option name="url" value="https://github.com/junwOpenSourceProjects/JOSP-ExaminationSystemJava.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="JRebelWorkspace">
     <option name="jrebelEnabledAutocompile" value="true" />
@@ -75,6 +94,11 @@
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="wo1261931780.JOSPexaminationSystemJava.controller" />
+    </key>
+  </component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -104,7 +128,7 @@
       <workItem from="1679762559872" duration="6000" />
       <workItem from="1679798790543" duration="3151000" />
       <workItem from="1679805365145" duration="4076000" />
-      <workItem from="1679812923558" duration="2348000" />
+      <workItem from="1679812923558" duration="14344000" />
     </task>
     <servers />
   </component>
@@ -115,14 +139,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/ReviewListMarxismController.java</url>
-          <line>54</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/ReviewListMarxismController.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/NationLineController.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
