@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wo1261931780.JOSPexaminationSystemJava.dao.CollegeLineMapper">
+  <resultMap id="BaseResultMap" type="wo1261931780.JOSPexaminationSystemJava.entity.CollegeLine">
+    <!--@mbg.generated-->
+    <!--@Table college_line-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="subject_class" jdbcType="VARCHAR" property="subjectClass" />
+    <result column="degree_type" jdbcType="VARCHAR" property="degreeType" />
+    <result column="score_polite" jdbcType="INTEGER" property="scorePolite" />
+    <result column="score_english" jdbcType="INTEGER" property="scoreEnglish" />
+    <result column="score_professional_1" jdbcType="INTEGER" property="scoreProfessional1" />
+    <result column="score_professional_2" jdbcType="INTEGER" property="scoreProfessional2" />
+    <result column="score_total" jdbcType="INTEGER" property="scoreTotal" />
+    <result column="score_total_public" jdbcType="INTEGER" property="scoreTotalPublic" />
+    <result column="score_total_professional" jdbcType="INTEGER" property="scoreTotalProfessional" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, subject_class, degree_type, score_polite, score_english, score_professional_1, 
+    score_professional_2, score_total, score_total_public, score_total_professional
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update college_line
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="subject_class = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.subjectClass,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="degree_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.degreeType,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="score_polite = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scorePolite,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_english = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreEnglish,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_professional_1 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreProfessional1,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_professional_2 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreProfessional2,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_total = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotal,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_total_public = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotalPublic,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_total_professional = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotalProfessional,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update college_line
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="subject_class = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.subjectClass != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.subjectClass,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="degree_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.degreeType != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.degreeType,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_polite = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scorePolite != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scorePolite,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_english = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreEnglish != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreEnglish,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_professional_1 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreProfessional1 != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreProfessional1,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_professional_2 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreProfessional2 != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreProfessional2,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_total = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreTotal != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotal,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_total_public = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreTotalPublic != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotalPublic,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_total_professional = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreTotalProfessional != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotalProfessional,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into college_line
+    (id, subject_class, degree_type, score_polite, score_english, score_professional_1, 
+      score_professional_2, score_total, score_total_public, score_total_professional
+      )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=VARCHAR}, #{item.subjectClass,jdbcType=VARCHAR}, #{item.degreeType,jdbcType=VARCHAR}, 
+        #{item.scorePolite,jdbcType=INTEGER}, #{item.scoreEnglish,jdbcType=INTEGER}, #{item.scoreProfessional1,jdbcType=INTEGER}, 
+        #{item.scoreProfessional2,jdbcType=INTEGER}, #{item.scoreTotal,jdbcType=INTEGER}, 
+        #{item.scoreTotalPublic,jdbcType=INTEGER}, #{item.scoreTotalProfessional,jdbcType=INTEGER}
+        )
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.CollegeLine">
+    <!--@mbg.generated-->
+    insert into college_line
+    (id, subject_class, degree_type, score_polite, score_english, score_professional_1, 
+      score_professional_2, score_total, score_total_public, score_total_professional
+      )
+    values
+    (#{id,jdbcType=VARCHAR}, #{subjectClass,jdbcType=VARCHAR}, #{degreeType,jdbcType=VARCHAR}, 
+      #{scorePolite,jdbcType=INTEGER}, #{scoreEnglish,jdbcType=INTEGER}, #{scoreProfessional1,jdbcType=INTEGER}, 
+      #{scoreProfessional2,jdbcType=INTEGER}, #{scoreTotal,jdbcType=INTEGER}, #{scoreTotalPublic,jdbcType=INTEGER}, 
+      #{scoreTotalProfessional,jdbcType=INTEGER})
+    on duplicate key update 
+    id = #{id,jdbcType=VARCHAR}, 
+    subject_class = #{subjectClass,jdbcType=VARCHAR}, 
+    degree_type = #{degreeType,jdbcType=VARCHAR}, 
+    score_polite = #{scorePolite,jdbcType=INTEGER}, 
+    score_english = #{scoreEnglish,jdbcType=INTEGER}, 
+    score_professional_1 = #{scoreProfessional1,jdbcType=INTEGER}, 
+    score_professional_2 = #{scoreProfessional2,jdbcType=INTEGER}, 
+    score_total = #{scoreTotal,jdbcType=INTEGER}, 
+    score_total_public = #{scoreTotalPublic,jdbcType=INTEGER}, 
+    score_total_professional = #{scoreTotalProfessional,jdbcType=INTEGER}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.CollegeLine">
+    <!--@mbg.generated-->
+    insert into college_line
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="subjectClass != null">
+        subject_class,
+      </if>
+      <if test="degreeType != null">
+        degree_type,
+      </if>
+      <if test="scorePolite != null">
+        score_polite,
+      </if>
+      <if test="scoreEnglish != null">
+        score_english,
+      </if>
+      <if test="scoreProfessional1 != null">
+        score_professional_1,
+      </if>
+      <if test="scoreProfessional2 != null">
+        score_professional_2,
+      </if>
+      <if test="scoreTotal != null">
+        score_total,
+      </if>
+      <if test="scoreTotalPublic != null">
+        score_total_public,
+      </if>
+      <if test="scoreTotalProfessional != null">
+        score_total_professional,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectClass != null">
+        #{subjectClass,jdbcType=VARCHAR},
+      </if>
+      <if test="degreeType != null">
+        #{degreeType,jdbcType=VARCHAR},
+      </if>
+      <if test="scorePolite != null">
+        #{scorePolite,jdbcType=INTEGER},
+      </if>
+      <if test="scoreEnglish != null">
+        #{scoreEnglish,jdbcType=INTEGER},
+      </if>
+      <if test="scoreProfessional1 != null">
+        #{scoreProfessional1,jdbcType=INTEGER},
+      </if>
+      <if test="scoreProfessional2 != null">
+        #{scoreProfessional2,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotal != null">
+        #{scoreTotal,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotalPublic != null">
+        #{scoreTotalPublic,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotalProfessional != null">
+        #{scoreTotalProfessional,jdbcType=INTEGER},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectClass != null">
+        subject_class = #{subjectClass,jdbcType=VARCHAR},
+      </if>
+      <if test="degreeType != null">
+        degree_type = #{degreeType,jdbcType=VARCHAR},
+      </if>
+      <if test="scorePolite != null">
+        score_polite = #{scorePolite,jdbcType=INTEGER},
+      </if>
+      <if test="scoreEnglish != null">
+        score_english = #{scoreEnglish,jdbcType=INTEGER},
+      </if>
+      <if test="scoreProfessional1 != null">
+        score_professional_1 = #{scoreProfessional1,jdbcType=INTEGER},
+      </if>
+      <if test="scoreProfessional2 != null">
+        score_professional_2 = #{scoreProfessional2,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotal != null">
+        score_total = #{scoreTotal,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotalPublic != null">
+        score_total_public = #{scoreTotalPublic,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotalProfessional != null">
+        score_total_professional = #{scoreTotalProfessional,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

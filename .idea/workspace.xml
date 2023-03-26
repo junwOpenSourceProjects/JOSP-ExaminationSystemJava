@@ -4,14 +4,30 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3fe68f11-677b-4f2c-9684-ea1d372db39b" name="更改" comment="" />
+    <list default="true" id="3fe68f11-677b-4f2c-9684-ea1d372db39b" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/MyBatisCodeHelperDatasource.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/JOSP-ExaminationSystemJava.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/rebel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/MergeDatabaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/ReviewListMarxismController.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="CompilerWorkspaceConfiguration">
+    <option name="MAKE_PROJECT_ON_SAVE" value="true" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JRebelWorkspace">
+    <option name="jrebelEnabledAutocompile" value="true" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -25,17 +41,25 @@
     </option>
   </component>
   <component name="ProjectId" id="2NVn38OSg3e3qwcz20virigkJgR" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/64234/Documents/GitHub/JOSP-ExaminationSystemJava",
+    "last_opened_file_path": "C:/Users/64234/Documents/JOSP-examinationSystemJava230325043719766Config.json",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -44,8 +68,16 @@
     "settings.editor.selected.configurable": "http.proxy",
     "spring.configuration.checksum": "40f13ff3598722e9aae330f6b3e432a5",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
   <component name="RebelAgentSelection">
     <selection>jr</selection>
   </component>
@@ -57,7 +89,7 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration name="JospExaminationSystemJavaApplication (1)" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+    <configuration name="JospExaminationSystemJavaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="JOSP-ExaminationSystemJava" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="wo1261931780.JOSPexaminationSystemJava.JospExaminationSystemJavaApplication" />
       <method v="2">
@@ -76,6 +108,7 @@
       <workItem from="1679757924377" duration="5000" />
       <workItem from="1679761748165" duration="339000" />
       <workItem from="1679762559872" duration="6000" />
+      <workItem from="1679798790543" duration="2444000" />
     </task>
     <servers />
   </component>

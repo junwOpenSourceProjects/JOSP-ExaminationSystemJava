@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wo1261931780.JOSPexaminationSystemJava.dao.AcademyLineMapper">
+  <resultMap id="BaseResultMap" type="wo1261931780.JOSPexaminationSystemJava.entity.AcademyLine">
+    <!--@mbg.generated-->
+    <!--@Table academy_line-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="profession_code" jdbcType="INTEGER" property="professionCode" />
+    <result column="profession_name" jdbcType="VARCHAR" property="professionName" />
+    <result column="test_way" jdbcType="VARCHAR" property="testWay" />
+    <result column="score_polite" jdbcType="INTEGER" property="scorePolite" />
+    <result column="score_english" jdbcType="INTEGER" property="scoreEnglish" />
+    <result column="score_professional_1" jdbcType="INTEGER" property="scoreProfessional1" />
+    <result column="score_professional_2" jdbcType="INTEGER" property="scoreProfessional2" />
+    <result column="score_total" jdbcType="INTEGER" property="scoreTotal" />
+    <result column="score_total_public" jdbcType="INTEGER" property="scoreTotalPublic" />
+    <result column="score_total_professional" jdbcType="INTEGER" property="scoreTotalProfessional" />
+    <result column="training_mode" jdbcType="VARCHAR" property="trainingMode" />
+    <result column="degree_type" jdbcType="VARCHAR" property="degreeType" />
+    <result column="research_direction" jdbcType="VARCHAR" property="researchDirection" />
+    <result column="number_of_students_exempted" jdbcType="VARCHAR" property="numberOfStudentsExempted" />
+    <result column="number_of_students_enrolled_in_the_unified_examination" jdbcType="VARCHAR" property="numberOfStudentsEnrolledInTheUnifiedExamination" />
+    <result column="academy_name" jdbcType="VARCHAR" property="academyName" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, profession_code, profession_name, test_way, score_polite, score_english, score_professional_1, 
+    score_professional_2, score_total, score_total_public, score_total_professional, 
+    training_mode, degree_type, research_direction, number_of_students_exempted, number_of_students_enrolled_in_the_unified_examination, 
+    academy_name
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update academy_line
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="profession_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.professionCode,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="profession_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.professionName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="test_way = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.testWay,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="score_polite = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scorePolite,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_english = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreEnglish,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_professional_1 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreProfessional1,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_professional_2 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreProfessional2,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_total = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotal,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_total_public = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotalPublic,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_total_professional = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotalProfessional,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="training_mode = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.trainingMode,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="degree_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.degreeType,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="research_direction = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.researchDirection,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="number_of_students_exempted = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.numberOfStudentsExempted,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="number_of_students_enrolled_in_the_unified_examination = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.numberOfStudentsEnrolledInTheUnifiedExamination,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="academy_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.academyName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update academy_line
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="profession_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.professionCode != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.professionCode,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="profession_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.professionName != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.professionName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="test_way = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.testWay != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.testWay,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_polite = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scorePolite != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scorePolite,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_english = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreEnglish != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreEnglish,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_professional_1 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreProfessional1 != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreProfessional1,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_professional_2 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreProfessional2 != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreProfessional2,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_total = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreTotal != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotal,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_total_public = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreTotalPublic != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotalPublic,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_total_professional = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreTotalProfessional != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotalProfessional,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="training_mode = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.trainingMode != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.trainingMode,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="degree_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.degreeType != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.degreeType,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="research_direction = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.researchDirection != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.researchDirection,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_of_students_exempted = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.numberOfStudentsExempted != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.numberOfStudentsExempted,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="number_of_students_enrolled_in_the_unified_examination = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.numberOfStudentsEnrolledInTheUnifiedExamination != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.numberOfStudentsEnrolledInTheUnifiedExamination,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="academy_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.academyName != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.academyName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into academy_line
+    (id, profession_code, profession_name, test_way, score_polite, score_english, score_professional_1, 
+      score_professional_2, score_total, score_total_public, score_total_professional, 
+      training_mode, degree_type, research_direction, number_of_students_exempted, number_of_students_enrolled_in_the_unified_examination, 
+      academy_name)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=VARCHAR}, #{item.professionCode,jdbcType=INTEGER}, #{item.professionName,jdbcType=VARCHAR}, 
+        #{item.testWay,jdbcType=VARCHAR}, #{item.scorePolite,jdbcType=INTEGER}, #{item.scoreEnglish,jdbcType=INTEGER}, 
+        #{item.scoreProfessional1,jdbcType=INTEGER}, #{item.scoreProfessional2,jdbcType=INTEGER}, 
+        #{item.scoreTotal,jdbcType=INTEGER}, #{item.scoreTotalPublic,jdbcType=INTEGER}, 
+        #{item.scoreTotalProfessional,jdbcType=INTEGER}, #{item.trainingMode,jdbcType=VARCHAR}, 
+        #{item.degreeType,jdbcType=VARCHAR}, #{item.researchDirection,jdbcType=VARCHAR}, 
+        #{item.numberOfStudentsExempted,jdbcType=VARCHAR}, #{item.numberOfStudentsEnrolledInTheUnifiedExamination,jdbcType=VARCHAR}, 
+        #{item.academyName,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.AcademyLine">
+    <!--@mbg.generated-->
+    insert into academy_line
+    (id, profession_code, profession_name, test_way, score_polite, score_english, score_professional_1, 
+      score_professional_2, score_total, score_total_public, score_total_professional, 
+      training_mode, degree_type, research_direction, number_of_students_exempted, number_of_students_enrolled_in_the_unified_examination, 
+      academy_name)
+    values
+    (#{id,jdbcType=VARCHAR}, #{professionCode,jdbcType=INTEGER}, #{professionName,jdbcType=VARCHAR}, 
+      #{testWay,jdbcType=VARCHAR}, #{scorePolite,jdbcType=INTEGER}, #{scoreEnglish,jdbcType=INTEGER}, 
+      #{scoreProfessional1,jdbcType=INTEGER}, #{scoreProfessional2,jdbcType=INTEGER}, 
+      #{scoreTotal,jdbcType=INTEGER}, #{scoreTotalPublic,jdbcType=INTEGER}, #{scoreTotalProfessional,jdbcType=INTEGER}, 
+      #{trainingMode,jdbcType=VARCHAR}, #{degreeType,jdbcType=VARCHAR}, #{researchDirection,jdbcType=VARCHAR}, 
+      #{numberOfStudentsExempted,jdbcType=VARCHAR}, #{numberOfStudentsEnrolledInTheUnifiedExamination,jdbcType=VARCHAR}, 
+      #{academyName,jdbcType=VARCHAR})
+    on duplicate key update 
+    id = #{id,jdbcType=VARCHAR}, 
+    profession_code = #{professionCode,jdbcType=INTEGER}, 
+    profession_name = #{professionName,jdbcType=VARCHAR}, 
+    test_way = #{testWay,jdbcType=VARCHAR}, 
+    score_polite = #{scorePolite,jdbcType=INTEGER}, 
+    score_english = #{scoreEnglish,jdbcType=INTEGER}, 
+    score_professional_1 = #{scoreProfessional1,jdbcType=INTEGER}, 
+    score_professional_2 = #{scoreProfessional2,jdbcType=INTEGER}, 
+    score_total = #{scoreTotal,jdbcType=INTEGER}, 
+    score_total_public = #{scoreTotalPublic,jdbcType=INTEGER}, 
+    score_total_professional = #{scoreTotalProfessional,jdbcType=INTEGER}, 
+    training_mode = #{trainingMode,jdbcType=VARCHAR}, 
+    degree_type = #{degreeType,jdbcType=VARCHAR}, 
+    research_direction = #{researchDirection,jdbcType=VARCHAR}, 
+    number_of_students_exempted = #{numberOfStudentsExempted,jdbcType=VARCHAR}, 
+    number_of_students_enrolled_in_the_unified_examination = #{numberOfStudentsEnrolledInTheUnifiedExamination,jdbcType=VARCHAR}, 
+    academy_name = #{academyName,jdbcType=VARCHAR}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.AcademyLine">
+    <!--@mbg.generated-->
+    insert into academy_line
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="professionCode != null">
+        profession_code,
+      </if>
+      <if test="professionName != null">
+        profession_name,
+      </if>
+      <if test="testWay != null">
+        test_way,
+      </if>
+      <if test="scorePolite != null">
+        score_polite,
+      </if>
+      <if test="scoreEnglish != null">
+        score_english,
+      </if>
+      <if test="scoreProfessional1 != null">
+        score_professional_1,
+      </if>
+      <if test="scoreProfessional2 != null">
+        score_professional_2,
+      </if>
+      <if test="scoreTotal != null">
+        score_total,
+      </if>
+      <if test="scoreTotalPublic != null">
+        score_total_public,
+      </if>
+      <if test="scoreTotalProfessional != null">
+        score_total_professional,
+      </if>
+      <if test="trainingMode != null">
+        training_mode,
+      </if>
+      <if test="degreeType != null">
+        degree_type,
+      </if>
+      <if test="researchDirection != null">
+        research_direction,
+      </if>
+      <if test="numberOfStudentsExempted != null">
+        number_of_students_exempted,
+      </if>
+      <if test="numberOfStudentsEnrolledInTheUnifiedExamination != null">
+        number_of_students_enrolled_in_the_unified_examination,
+      </if>
+      <if test="academyName != null">
+        academy_name,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="professionCode != null">
+        #{professionCode,jdbcType=INTEGER},
+      </if>
+      <if test="professionName != null">
+        #{professionName,jdbcType=VARCHAR},
+      </if>
+      <if test="testWay != null">
+        #{testWay,jdbcType=VARCHAR},
+      </if>
+      <if test="scorePolite != null">
+        #{scorePolite,jdbcType=INTEGER},
+      </if>
+      <if test="scoreEnglish != null">
+        #{scoreEnglish,jdbcType=INTEGER},
+      </if>
+      <if test="scoreProfessional1 != null">
+        #{scoreProfessional1,jdbcType=INTEGER},
+      </if>
+      <if test="scoreProfessional2 != null">
+        #{scoreProfessional2,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotal != null">
+        #{scoreTotal,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotalPublic != null">
+        #{scoreTotalPublic,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotalProfessional != null">
+        #{scoreTotalProfessional,jdbcType=INTEGER},
+      </if>
+      <if test="trainingMode != null">
+        #{trainingMode,jdbcType=VARCHAR},
+      </if>
+      <if test="degreeType != null">
+        #{degreeType,jdbcType=VARCHAR},
+      </if>
+      <if test="researchDirection != null">
+        #{researchDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="numberOfStudentsExempted != null">
+        #{numberOfStudentsExempted,jdbcType=VARCHAR},
+      </if>
+      <if test="numberOfStudentsEnrolledInTheUnifiedExamination != null">
+        #{numberOfStudentsEnrolledInTheUnifiedExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="academyName != null">
+        #{academyName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="professionCode != null">
+        profession_code = #{professionCode,jdbcType=INTEGER},
+      </if>
+      <if test="professionName != null">
+        profession_name = #{professionName,jdbcType=VARCHAR},
+      </if>
+      <if test="testWay != null">
+        test_way = #{testWay,jdbcType=VARCHAR},
+      </if>
+      <if test="scorePolite != null">
+        score_polite = #{scorePolite,jdbcType=INTEGER},
+      </if>
+      <if test="scoreEnglish != null">
+        score_english = #{scoreEnglish,jdbcType=INTEGER},
+      </if>
+      <if test="scoreProfessional1 != null">
+        score_professional_1 = #{scoreProfessional1,jdbcType=INTEGER},
+      </if>
+      <if test="scoreProfessional2 != null">
+        score_professional_2 = #{scoreProfessional2,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotal != null">
+        score_total = #{scoreTotal,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotalPublic != null">
+        score_total_public = #{scoreTotalPublic,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotalProfessional != null">
+        score_total_professional = #{scoreTotalProfessional,jdbcType=INTEGER},
+      </if>
+      <if test="trainingMode != null">
+        training_mode = #{trainingMode,jdbcType=VARCHAR},
+      </if>
+      <if test="degreeType != null">
+        degree_type = #{degreeType,jdbcType=VARCHAR},
+      </if>
+      <if test="researchDirection != null">
+        research_direction = #{researchDirection,jdbcType=VARCHAR},
+      </if>
+      <if test="numberOfStudentsExempted != null">
+        number_of_students_exempted = #{numberOfStudentsExempted,jdbcType=VARCHAR},
+      </if>
+      <if test="numberOfStudentsEnrolledInTheUnifiedExamination != null">
+        number_of_students_enrolled_in_the_unified_examination = #{numberOfStudentsEnrolledInTheUnifiedExamination,jdbcType=VARCHAR},
+      </if>
+      <if test="academyName != null">
+        academy_name = #{academyName,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

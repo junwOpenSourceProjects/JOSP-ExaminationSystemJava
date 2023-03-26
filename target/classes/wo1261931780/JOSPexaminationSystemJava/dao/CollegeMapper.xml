@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wo1261931780.JOSPexaminationSystemJava.dao.CollegeMapper">
+  <resultMap id="BaseResultMap" type="wo1261931780.JOSPexaminationSystemJava.entity.College">
+    <!--@mbg.generated-->
+    <!--@Table college-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="academy_code" jdbcType="INTEGER" property="academyCode" />
+    <result column="academy_name" jdbcType="VARCHAR" property="academyName" />
+    <result column="review_status" jdbcType="INTEGER" property="reviewStatus" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, academy_code, academy_name, review_status
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update college
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="academy_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.academyCode,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="academy_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.academyName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="review_status = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.reviewStatus,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update college
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="academy_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.academyCode != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.academyCode,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="academy_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.academyName != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.academyName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="review_status = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.reviewStatus != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.reviewStatus,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into college
+    (id, academy_code, academy_name, review_status)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=VARCHAR}, #{item.academyCode,jdbcType=INTEGER}, #{item.academyName,jdbcType=VARCHAR}, 
+        #{item.reviewStatus,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.College">
+    <!--@mbg.generated-->
+    insert into college
+    (id, academy_code, academy_name, review_status)
+    values
+    (#{id,jdbcType=VARCHAR}, #{academyCode,jdbcType=INTEGER}, #{academyName,jdbcType=VARCHAR}, 
+      #{reviewStatus,jdbcType=INTEGER})
+    on duplicate key update 
+    id = #{id,jdbcType=VARCHAR}, 
+    academy_code = #{academyCode,jdbcType=INTEGER}, 
+    academy_name = #{academyName,jdbcType=VARCHAR}, 
+    review_status = #{reviewStatus,jdbcType=INTEGER}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.College">
+    <!--@mbg.generated-->
+    insert into college
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="academyCode != null">
+        academy_code,
+      </if>
+      <if test="academyName != null">
+        academy_name,
+      </if>
+      <if test="reviewStatus != null">
+        review_status,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="academyCode != null">
+        #{academyCode,jdbcType=INTEGER},
+      </if>
+      <if test="academyName != null">
+        #{academyName,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewStatus != null">
+        #{reviewStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="academyCode != null">
+        academy_code = #{academyCode,jdbcType=INTEGER},
+      </if>
+      <if test="academyName != null">
+        academy_name = #{academyName,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewStatus != null">
+        review_status = #{reviewStatus,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
