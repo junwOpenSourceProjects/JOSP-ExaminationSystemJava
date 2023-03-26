@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3fe68f11-677b-4f2c-9684-ea1d372db39b" name="更改" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/AcademyGenerateScoreController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/AcademyLineController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/CollegeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/CollegeLineController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/NationLineController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/ReviewListAllController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/ReviewListMarxismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/ReviewListMarxismController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/College.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/College.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,7 +121,7 @@
       <workItem from="1679762559872" duration="6000" />
       <workItem from="1679798790543" duration="3151000" />
       <workItem from="1679805365145" duration="4076000" />
-      <workItem from="1679812923558" duration="14344000" />
+      <workItem from="1679812923558" duration="17112000" />
     </task>
     <servers />
   </component>

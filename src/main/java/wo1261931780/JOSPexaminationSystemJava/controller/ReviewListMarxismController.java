@@ -1,5 +1,6 @@
 package wo1261931780.JOSPexaminationSystemJava.controller;
 
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,27 +34,36 @@ public class ReviewListMarxismController {
 	public ShowResult<Page<ReviewList>> showMeMaxismReviewListPage(@RequestParam Integer page
 			, @RequestParam Integer limit
 			, @RequestParam String sort
-			, String studentName, String subjectCode, String type) {
+			, String studentName, String subjectCode, String isChecked) {
 		Page<ReviewList> pageInfo = new Page<>();// 页码，每页条数
 		pageInfo.setCurrent(page);// 当前页
 		pageInfo.setSize(limit);// 每页条数
 		LambdaQueryWrapper<ReviewList> lambdaQueryWrapper = new LambdaQueryWrapper<>();
 		lambdaQueryWrapper.like(studentName != null, ReviewList::getStudentName, studentName);
-		//lambdaQueryWrapper.eq(ReviewList::getSubjectName, "马克思主义理论");
-		lambdaQueryWrapper.eq(ReviewList::getSubjectCode, subjectCode);
+		if (!StrUtil.isBlankIfStr(subjectCode)) {
+			lambdaQueryWrapper.like(ReviewList::getSubjectCode, subjectCode);
+		} else {
+			lambdaQueryWrapper.like(ReviewList::getSubjectName, "马克思主义理论");
+			lambdaQueryWrapper.or().like(ReviewList::getSubjectName, "科学技术史");
+			lambdaQueryWrapper.or().like(ReviewList::getSubjectName, "科学技术哲学");
+		}
+		//lambdaQueryWrapper.like(ReviewList::getSubjectName, "马克思主义理论");
+		//.or().like(ReviewList::getSubjectName, "科学技术史")
+		//.or().like(ReviewList::getSubjectName, "科学技术哲学");
+		//lambdaQueryWrapper.eq(ReviewList::getSubjectCode, subjectCode);
 		if (sort.equals("0")) {
 			lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
 		} else {
 			lambdaQueryWrapper.orderByAsc(ReviewList::getScoreTotal);
 		}
-		
 		Page<ReviewList> testPage = reviewListService.page(pageInfo, lambdaQueryWrapper);
 		return ShowResult.sendSuccess(testPage);
 	}
+	
 	@PostMapping("/insertOrUpdate")
 	public ShowResult<ReviewList> insertOrUpdateMaxismReviewList(ReviewList reviewList) {
 		int saveOrUpdate = reviewListService.insertOrUpdate(reviewList);
-		if (saveOrUpdate!=0) {
+		if (saveOrUpdate != 0) {
 			return ShowResult.sendSuccess(reviewList);
 		} else {
 			return ShowResult.sendError("保存失败");
