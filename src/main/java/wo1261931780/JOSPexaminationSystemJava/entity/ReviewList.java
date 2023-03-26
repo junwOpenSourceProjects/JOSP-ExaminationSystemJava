@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 *Package:wo1261931780.JOSPexaminationSystemJava.entity
 *@author liujiajun_junw
 *@Date 2023-03-11-17  星期日
-*@description 
+*@description
 */
 /**
     * 2023年上海交大各学院复试名单
@@ -70,7 +70,7 @@ public class ReviewList implements Serializable {
     @TableField(value = "subject_code")
     @ApiModelProperty(value="学科代码")
     @Schema(description="学科代码")
-    private Integer subjectCode;
+    private String subjectCode;
 
     /**
      * 学科名称

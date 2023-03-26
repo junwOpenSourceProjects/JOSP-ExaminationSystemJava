@@ -4,13 +4,12 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import wo1261931780.JOSPexaminationSystemJava.config.ShowResult;
-import wo1261931780.JOSPexaminationSystemJava.entity.MergeDatabase;
 import wo1261931780.JOSPexaminationSystemJava.entity.ReviewList;
-import wo1261931780.JOSPexaminationSystemJava.service.MergeDatabaseService;
 import wo1261931780.JOSPexaminationSystemJava.service.ReviewListService;
 
 /**
@@ -31,18 +30,33 @@ public class ReviewListMarxismController {
 	private ReviewListService reviewListService;
 	
 	@GetMapping("/list")
-	public ShowResult<Page<ReviewList>> showMePage(@RequestParam Integer page
+	public ShowResult<Page<ReviewList>> showMeMaxismReviewListPage(@RequestParam Integer page
 			, @RequestParam Integer limit
 			, @RequestParam String sort
-			, String studentName, String importance, String type) {
+			, String studentName, String subjectCode, String type) {
 		Page<ReviewList> pageInfo = new Page<>();// 页码，每页条数
 		pageInfo.setCurrent(page);// 当前页
 		pageInfo.setSize(limit);// 每页条数
 		LambdaQueryWrapper<ReviewList> lambdaQueryWrapper = new LambdaQueryWrapper<>();
 		lambdaQueryWrapper.like(studentName != null, ReviewList::getStudentName, studentName);
-		lambdaQueryWrapper.orderByAsc(ReviewList::getScoreTotal);
+		//lambdaQueryWrapper.eq(ReviewList::getSubjectName, "马克思主义理论");
+		lambdaQueryWrapper.eq(ReviewList::getSubjectCode, subjectCode);
+		if (sort.equals("0")) {
+			lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
+		} else {
+			lambdaQueryWrapper.orderByAsc(ReviewList::getScoreTotal);
+		}
 		
 		Page<ReviewList> testPage = reviewListService.page(pageInfo, lambdaQueryWrapper);
 		return ShowResult.sendSuccess(testPage);
+	}
+	@PostMapping("/insertOrUpdate")
+	public ShowResult<ReviewList> insertOrUpdateMaxismReviewList(ReviewList reviewList) {
+		int saveOrUpdate = reviewListService.insertOrUpdate(reviewList);
+		if (saveOrUpdate!=0) {
+			return ShowResult.sendSuccess(reviewList);
+		} else {
+			return ShowResult.sendError("保存失败");
+		}
 	}
 }
