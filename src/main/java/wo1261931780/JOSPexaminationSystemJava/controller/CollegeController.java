@@ -9,10 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import wo1261931780.JOSPexaminationSystemJava.config.ShowResult;
+import wo1261931780.JOSPexaminationSystemJava.entity.AcademySingle;
 import wo1261931780.JOSPexaminationSystemJava.entity.College;
-import wo1261931780.JOSPexaminationSystemJava.entity.NationalLine;
 import wo1261931780.JOSPexaminationSystemJava.service.CollegeService;
-import wo1261931780.JOSPexaminationSystemJava.service.NationalLineService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by Intellij IDEA.
@@ -50,5 +52,17 @@ public class CollegeController {
 		} else {
 			return ShowResult.sendError("保存失败");
 		}
+	}
+	@GetMapping("/academyList")
+	public ShowResult<List<AcademySingle>> showMeAllAcademyList(String academyName) {
+		ArrayList<AcademySingle> singleArrayList = new ArrayList<>();
+		collegeService.list().forEach(college -> {
+			AcademySingle academySingle = new AcademySingle();
+			academySingle.setKey(college.getAcademyCode());
+			academySingle.setLabel(college.getAcademyName());
+			singleArrayList.add(academySingle);
+		});
+		
+		return ShowResult.sendSuccess(singleArrayList);
 	}
 }

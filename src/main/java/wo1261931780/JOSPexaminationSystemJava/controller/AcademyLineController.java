@@ -1,5 +1,6 @@
 package wo1261931780.JOSPexaminationSystemJava.controller;
 
+import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,8 @@ import wo1261931780.JOSPexaminationSystemJava.entity.AcademyLine;
 import wo1261931780.JOSPexaminationSystemJava.entity.NationalLine;
 import wo1261931780.JOSPexaminationSystemJava.service.AcademyLineService;
 import wo1261931780.JOSPexaminationSystemJava.service.NationalLineService;
+
+import java.util.UUID;
 
 /**
  * Created by Intellij IDEA.
@@ -42,13 +45,18 @@ public class AcademyLineController {
 		Page<AcademyLine> testPage = academyLineService.page(pageInfo, lambdaQueryWrapper);
 		return ShowResult.sendSuccess(testPage);
 	}
+	
 	@PostMapping("/insertOrUpdate")
 	public ShowResult<AcademyLine> insertOrUpdateAcademyLine(AcademyLine academyLine) {
+		if (StrUtil.isEmptyIfStr(academyLine.getId())) {
+			academyLine.setId(UUID.randomUUID().toString());
+		}
 		int saveOrUpdate = academyLineService.insertOrUpdate(academyLine);
-		if (saveOrUpdate!=0) {
+		if (saveOrUpdate != 0) {
 			return ShowResult.sendSuccess(academyLine);
 		} else {
 			return ShowResult.sendError("保存失败");
 		}
 	}
+	// todo 复试总分，公共课/专业课总分，自动计算
 }

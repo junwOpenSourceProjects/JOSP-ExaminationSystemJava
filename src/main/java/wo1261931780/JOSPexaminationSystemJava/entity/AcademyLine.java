@@ -19,7 +19,7 @@ import lombok.NoArgsConstructor;
 *Package:wo1261931780.JOSPexaminationSystemJava.entity
 *@author liujiajun_junw
 *@Date 2023-03-11-17  星期日
-*@description 
+*@description
 */
 /**
     * 2023年上海交大各学院院线
@@ -46,7 +46,7 @@ public class AcademyLine implements Serializable {
     @TableField(value = "profession_code")
     @ApiModelProperty(value="专业代码")
     @Schema(description="专业代码")
-    private Integer professionCode;
+    private String professionCode;
 
     /**
      * 专业名称
@@ -150,7 +150,7 @@ public class AcademyLine implements Serializable {
     @TableField(value = "number_of_students_exempted")
     @ApiModelProperty(value="推免生人数")
     @Schema(description="推免生人数")
-    private String numberOfStudentsExempted;
+    private Integer numberOfStudentsExempted;
 
     /**
      * 统考生人数
@@ -158,7 +158,7 @@ public class AcademyLine implements Serializable {
     @TableField(value = "number_of_students_enrolled_in_the_unified_examination")
     @ApiModelProperty(value="统考生人数")
     @Schema(description="统考生人数")
-    private String numberOfStudentsEnrolledInTheUnifiedExamination;
+    private Integer numberOfStudentsEnrolledInTheUnifiedExamination;
 
     /**
      * 学院名称

@@ -51,11 +51,28 @@ public class ReviewListMarxismController {
 		//.or().like(ReviewList::getSubjectName, "科学技术史")
 		//.or().like(ReviewList::getSubjectName, "科学技术哲学");
 		//lambdaQueryWrapper.eq(ReviewList::getSubjectCode, subjectCode);
-		if (sort.equals("0")) {
-			lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
-		} else {
-			lambdaQueryWrapper.orderByAsc(ReviewList::getScoreTotal);
+		switch (sort) {
+			case "0":// 总分降序
+				lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
+				break;
+			case "1":// 总分升序
+				lambdaQueryWrapper.orderByAsc(ReviewList::getScoreTotal);
+				break;
+			case "2":// 公共分降序
+				lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotalPublic);
+				break;
+			case "3":// 专业分降序
+				lambdaQueryWrapper.orderByAsc(ReviewList::getScoreTotalProfessional);
+				break;
+			default:
+				lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
+				break;
 		}
+		//if (sort.equals("0")) {// 总分降序
+		//	lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
+		//} else {
+		//	lambdaQueryWrapper.orderByAsc(ReviewList::getScoreTotal);
+		//}
 		Page<ReviewList> testPage = reviewListService.page(pageInfo, lambdaQueryWrapper);
 		return ShowResult.sendSuccess(testPage);
 	}
