@@ -5,6 +5,7 @@
       <DefaultCasing>lower/lower</DefaultCasing>
       <DefaultEngine>InnoDB</DefaultEngine>
       <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+<<<<<<< Updated upstream
       <Grants>|root||root|localhost|ALTER|G
 |root||root|localhost|ALTER ROUTINE|G
 |root||root|localhost|APPLICATION_PASSWORD_ADMIN|G
@@ -5516,5 +5517,46 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
+=======
+      <ServerVersion>8.0.30</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="cloud_order">
+      <Current>1</Current>
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="3" parent="1" name="cloud_user">
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="4" parent="1" name="elasticsearch">
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="5" parent="1" name="information_schema">
+      <CollationName>utf8mb3_general_ci</CollationName>
+    </schema>
+    <schema id="6" parent="1" name="mysql">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="7" parent="1" name="nacos">
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="8" parent="1" name="performance_schema">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="9" parent="1" name="postgraduate">
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="10" parent="1" name="reggie">
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="11" parent="1" name="spiderflow">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+    <schema id="12" parent="1" name="study001sql">
+      <CollationName>utf8mb4_general_ci</CollationName>
+    </schema>
+    <schema id="13" parent="1" name="sys">
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </schema>
+>>>>>>> Stashed changes
   </database-model>
 </dataSource>
