@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="wo1261931780.JOSPexaminationSystemJava.dao.ComplexTableMapper">
+<mapper namespace="wo1261931780.JOSPexaminationSystemJava.DAO.ComplexTableMapper">
   <resultMap id="BaseResultMap" type="wo1261931780.JOSPexaminationSystemJava.entity.ComplexTable">
     <!--@mbg.generated-->
     <!--@Table complex_table-->
@@ -23,7 +23,7 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, `timestamp`, author, reviewer, title, content_short, content, forecast, importance, 
+    id, `timestamp`, author, reviewer, title, content_short, content, forecast, importance,
     `type`, `status`, display_time, comment_disabled, pageviews, image_uri, platforms
   </sql>
   <update id="updateBatch" parameterType="java.util.List">
@@ -229,48 +229,48 @@
   <insert id="batchInsert" parameterType="map">
     <!--@mbg.generated-->
     insert into complex_table
-    (id, `timestamp`, author, reviewer, title, content_short, content, forecast, importance, 
+    (id, `timestamp`, author, reviewer, title, content_short, content, forecast, importance,
       `type`, `status`, display_time, comment_disabled, pageviews, image_uri, platforms
       )
     values
     <foreach collection="list" item="item" separator=",">
-      (#{item.id,jdbcType=INTEGER}, #{item.timestamp,jdbcType=TIMESTAMP}, #{item.author,jdbcType=VARCHAR}, 
-        #{item.reviewer,jdbcType=VARCHAR}, #{item.title,jdbcType=VARCHAR}, #{item.contentShort,jdbcType=VARCHAR}, 
-        #{item.content,jdbcType=LONGVARCHAR}, #{item.forecast,jdbcType=VARCHAR}, #{item.importance,jdbcType=VARCHAR}, 
-        #{item.type,jdbcType=VARCHAR}, #{item.status,jdbcType=VARCHAR}, #{item.displayTime,jdbcType=TIMESTAMP}, 
-        #{item.commentDisabled,jdbcType=VARCHAR}, #{item.pageviews,jdbcType=VARCHAR}, #{item.imageUri,jdbcType=LONGVARCHAR}, 
+      (#{item.id,jdbcType=INTEGER}, #{item.timestamp,jdbcType=TIMESTAMP}, #{item.author,jdbcType=VARCHAR},
+        #{item.reviewer,jdbcType=VARCHAR}, #{item.title,jdbcType=VARCHAR}, #{item.contentShort,jdbcType=VARCHAR},
+        #{item.content,jdbcType=LONGVARCHAR}, #{item.forecast,jdbcType=VARCHAR}, #{item.importance,jdbcType=VARCHAR},
+        #{item.type,jdbcType=VARCHAR}, #{item.status,jdbcType=VARCHAR}, #{item.displayTime,jdbcType=TIMESTAMP},
+        #{item.commentDisabled,jdbcType=VARCHAR}, #{item.pageviews,jdbcType=VARCHAR}, #{item.imageUri,jdbcType=LONGVARCHAR},
         #{item.platforms,jdbcType=VARCHAR})
     </foreach>
   </insert>
   <insert id="insertOrUpdate" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.ComplexTable">
     <!--@mbg.generated-->
     insert into complex_table
-    (id, `timestamp`, author, reviewer, title, content_short, content, forecast, importance, 
+    (id, `timestamp`, author, reviewer, title, content_short, content, forecast, importance,
       `type`, `status`, display_time, comment_disabled, pageviews, image_uri, platforms
       )
     values
-    (#{id,jdbcType=INTEGER}, #{timestamp,jdbcType=TIMESTAMP}, #{author,jdbcType=VARCHAR}, 
-      #{reviewer,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{contentShort,jdbcType=VARCHAR}, 
-      #{content,jdbcType=LONGVARCHAR}, #{forecast,jdbcType=VARCHAR}, #{importance,jdbcType=VARCHAR}, 
-      #{type,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{displayTime,jdbcType=TIMESTAMP}, 
-      #{commentDisabled,jdbcType=VARCHAR}, #{pageviews,jdbcType=VARCHAR}, #{imageUri,jdbcType=LONGVARCHAR}, 
+    (#{id,jdbcType=INTEGER}, #{timestamp,jdbcType=TIMESTAMP}, #{author,jdbcType=VARCHAR},
+      #{reviewer,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, #{contentShort,jdbcType=VARCHAR},
+      #{content,jdbcType=LONGVARCHAR}, #{forecast,jdbcType=VARCHAR}, #{importance,jdbcType=VARCHAR},
+      #{type,jdbcType=VARCHAR}, #{status,jdbcType=VARCHAR}, #{displayTime,jdbcType=TIMESTAMP},
+      #{commentDisabled,jdbcType=VARCHAR}, #{pageviews,jdbcType=VARCHAR}, #{imageUri,jdbcType=LONGVARCHAR},
       #{platforms,jdbcType=VARCHAR})
-    on duplicate key update 
-    id = #{id,jdbcType=INTEGER}, 
-    `timestamp` = #{timestamp,jdbcType=TIMESTAMP}, 
-    author = #{author,jdbcType=VARCHAR}, 
-    reviewer = #{reviewer,jdbcType=VARCHAR}, 
-    title = #{title,jdbcType=VARCHAR}, 
-    content_short = #{contentShort,jdbcType=VARCHAR}, 
-    content = #{content,jdbcType=LONGVARCHAR}, 
-    forecast = #{forecast,jdbcType=VARCHAR}, 
-    importance = #{importance,jdbcType=VARCHAR}, 
-    `type` = #{type,jdbcType=VARCHAR}, 
-    `status` = #{status,jdbcType=VARCHAR}, 
-    display_time = #{displayTime,jdbcType=TIMESTAMP}, 
-    comment_disabled = #{commentDisabled,jdbcType=VARCHAR}, 
-    pageviews = #{pageviews,jdbcType=VARCHAR}, 
-    image_uri = #{imageUri,jdbcType=LONGVARCHAR}, 
+    on duplicate key update
+    id = #{id,jdbcType=INTEGER},
+    `timestamp` = #{timestamp,jdbcType=TIMESTAMP},
+    author = #{author,jdbcType=VARCHAR},
+    reviewer = #{reviewer,jdbcType=VARCHAR},
+    title = #{title,jdbcType=VARCHAR},
+    content_short = #{contentShort,jdbcType=VARCHAR},
+    content = #{content,jdbcType=LONGVARCHAR},
+    forecast = #{forecast,jdbcType=VARCHAR},
+    importance = #{importance,jdbcType=VARCHAR},
+    `type` = #{type,jdbcType=VARCHAR},
+    `status` = #{status,jdbcType=VARCHAR},
+    display_time = #{displayTime,jdbcType=TIMESTAMP},
+    comment_disabled = #{commentDisabled,jdbcType=VARCHAR},
+    pageviews = #{pageviews,jdbcType=VARCHAR},
+    image_uri = #{imageUri,jdbcType=LONGVARCHAR},
     platforms = #{platforms,jdbcType=VARCHAR}
   </insert>
   <insert id="insertOrUpdateSelective" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.ComplexTable">
@@ -377,7 +377,7 @@
         #{platforms,jdbcType=VARCHAR},
       </if>
     </trim>
-    on duplicate key update 
+    on duplicate key update
     <trim suffixOverrides=",">
       <if test="id != null">
         id = #{id,jdbcType=INTEGER},

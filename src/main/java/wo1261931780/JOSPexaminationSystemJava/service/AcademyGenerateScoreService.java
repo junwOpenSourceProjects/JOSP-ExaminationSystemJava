@@ -3,9 +3,8 @@ package wo1261931780.JOSPexaminationSystemJava.service;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import java.util.List;
 import wo1261931780.JOSPexaminationSystemJava.entity.AcademyGenerateScore;
-import wo1261931780.JOSPexaminationSystemJava.dao.AcademyGenerateScoreMapper;
+import wo1261931780.JOSPexaminationSystemJava.DAO.AcademyGenerateScoreMapper;
 /**
 *Created by Intellij IDEA.
 *Project:JOSP-ExaminationSystemJava

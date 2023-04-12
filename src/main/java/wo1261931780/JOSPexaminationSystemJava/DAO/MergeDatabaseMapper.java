@@ -1,4 +1,4 @@
-package wo1261931780.JOSPexaminationSystemJava.dao;
+package wo1261931780.JOSPexaminationSystemJava.DAO;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import java.util.List;

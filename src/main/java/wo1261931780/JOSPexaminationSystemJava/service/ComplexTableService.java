@@ -4,7 +4,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import wo1261931780.JOSPexaminationSystemJava.entity.ComplexTable;
-import wo1261931780.JOSPexaminationSystemJava.dao.ComplexTableMapper;
+import wo1261931780.JOSPexaminationSystemJava.DAO.ComplexTableMapper;
 /**
 *Created by Intellij IDEA.
 *Project:JOSP-examinationSystemJava

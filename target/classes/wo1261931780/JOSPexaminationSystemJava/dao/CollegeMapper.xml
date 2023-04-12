@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="wo1261931780.JOSPexaminationSystemJava.dao.CollegeMapper">
+<mapper namespace="wo1261931780.JOSPexaminationSystemJava.DAO.CollegeMapper">
   <resultMap id="BaseResultMap" type="wo1261931780.JOSPexaminationSystemJava.entity.College">
     <!--@mbg.generated-->
     <!--@Table college-->
@@ -75,7 +75,7 @@
     (id, academy_code, academy_name, review_status)
     values
     <foreach collection="list" item="item" separator=",">
-      (#{item.id,jdbcType=VARCHAR}, #{item.academyCode,jdbcType=INTEGER}, #{item.academyName,jdbcType=VARCHAR}, 
+      (#{item.id,jdbcType=VARCHAR}, #{item.academyCode,jdbcType=INTEGER}, #{item.academyName,jdbcType=VARCHAR},
         #{item.reviewStatus,jdbcType=INTEGER})
     </foreach>
   </insert>
@@ -84,12 +84,12 @@
     insert into college
     (id, academy_code, academy_name, review_status)
     values
-    (#{id,jdbcType=VARCHAR}, #{academyCode,jdbcType=INTEGER}, #{academyName,jdbcType=VARCHAR}, 
+    (#{id,jdbcType=VARCHAR}, #{academyCode,jdbcType=INTEGER}, #{academyName,jdbcType=VARCHAR},
       #{reviewStatus,jdbcType=INTEGER})
-    on duplicate key update 
-    id = #{id,jdbcType=VARCHAR}, 
-    academy_code = #{academyCode,jdbcType=INTEGER}, 
-    academy_name = #{academyName,jdbcType=VARCHAR}, 
+    on duplicate key update
+    id = #{id,jdbcType=VARCHAR},
+    academy_code = #{academyCode,jdbcType=INTEGER},
+    academy_name = #{academyName,jdbcType=VARCHAR},
     review_status = #{reviewStatus,jdbcType=INTEGER}
   </insert>
   <insert id="insertOrUpdateSelective" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.College">
@@ -124,7 +124,7 @@
         #{reviewStatus,jdbcType=INTEGER},
       </if>
     </trim>
-    on duplicate key update 
+    on duplicate key update
     <trim suffixOverrides=",">
       <if test="id != null">
         id = #{id,jdbcType=VARCHAR},

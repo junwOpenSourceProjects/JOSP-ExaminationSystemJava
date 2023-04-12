@@ -1,4 +1,4 @@
-package wo1261931780.JOSPexaminationSystemJava.dao;
+package wo1261931780.JOSPexaminationSystemJava.DAO;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import java.util.List;
@@ -12,7 +12,7 @@ import wo1261931780.JOSPexaminationSystemJava.entity.ComplexTable;
 *Package:wo1261931780.JOSPexaminationSystemJava.dao
 *@author liujiajun_junw
 *@Date 2023-03-16-16  星期六
-*@description 
+*@description
 */
 @Mapper
 public interface ComplexTableMapper extends BaseMapper<ComplexTable> {

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="wo1261931780.JOSPexaminationSystemJava.dao.CollegeLineMapper">
+<mapper namespace="wo1261931780.JOSPexaminationSystemJava.DAO.CollegeLineMapper">
   <resultMap id="BaseResultMap" type="wo1261931780.JOSPexaminationSystemJava.entity.CollegeLine">
     <!--@mbg.generated-->
     <!--@Table college_line-->
@@ -17,7 +17,7 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, subject_class, degree_type, score_polite, score_english, score_professional_1, 
+    id, subject_class, degree_type, score_polite, score_english, score_professional_1,
     score_professional_2, score_total, score_total_public, score_total_professional
   </sql>
   <update id="updateBatch" parameterType="java.util.List">
@@ -151,14 +151,14 @@
   <insert id="batchInsert" parameterType="map">
     <!--@mbg.generated-->
     insert into college_line
-    (id, subject_class, degree_type, score_polite, score_english, score_professional_1, 
+    (id, subject_class, degree_type, score_polite, score_english, score_professional_1,
       score_professional_2, score_total, score_total_public, score_total_professional
       )
     values
     <foreach collection="list" item="item" separator=",">
-      (#{item.id,jdbcType=VARCHAR}, #{item.subjectClass,jdbcType=VARCHAR}, #{item.degreeType,jdbcType=VARCHAR}, 
-        #{item.scorePolite,jdbcType=INTEGER}, #{item.scoreEnglish,jdbcType=INTEGER}, #{item.scoreProfessional1,jdbcType=INTEGER}, 
-        #{item.scoreProfessional2,jdbcType=INTEGER}, #{item.scoreTotal,jdbcType=INTEGER}, 
+      (#{item.id,jdbcType=VARCHAR}, #{item.subjectClass,jdbcType=VARCHAR}, #{item.degreeType,jdbcType=VARCHAR},
+        #{item.scorePolite,jdbcType=INTEGER}, #{item.scoreEnglish,jdbcType=INTEGER}, #{item.scoreProfessional1,jdbcType=INTEGER},
+        #{item.scoreProfessional2,jdbcType=INTEGER}, #{item.scoreTotal,jdbcType=INTEGER},
         #{item.scoreTotalPublic,jdbcType=INTEGER}, #{item.scoreTotalProfessional,jdbcType=INTEGER}
         )
     </foreach>
@@ -166,24 +166,24 @@
   <insert id="insertOrUpdate" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.CollegeLine">
     <!--@mbg.generated-->
     insert into college_line
-    (id, subject_class, degree_type, score_polite, score_english, score_professional_1, 
+    (id, subject_class, degree_type, score_polite, score_english, score_professional_1,
       score_professional_2, score_total, score_total_public, score_total_professional
       )
     values
-    (#{id,jdbcType=VARCHAR}, #{subjectClass,jdbcType=VARCHAR}, #{degreeType,jdbcType=VARCHAR}, 
-      #{scorePolite,jdbcType=INTEGER}, #{scoreEnglish,jdbcType=INTEGER}, #{scoreProfessional1,jdbcType=INTEGER}, 
-      #{scoreProfessional2,jdbcType=INTEGER}, #{scoreTotal,jdbcType=INTEGER}, #{scoreTotalPublic,jdbcType=INTEGER}, 
+    (#{id,jdbcType=VARCHAR}, #{subjectClass,jdbcType=VARCHAR}, #{degreeType,jdbcType=VARCHAR},
+      #{scorePolite,jdbcType=INTEGER}, #{scoreEnglish,jdbcType=INTEGER}, #{scoreProfessional1,jdbcType=INTEGER},
+      #{scoreProfessional2,jdbcType=INTEGER}, #{scoreTotal,jdbcType=INTEGER}, #{scoreTotalPublic,jdbcType=INTEGER},
       #{scoreTotalProfessional,jdbcType=INTEGER})
-    on duplicate key update 
-    id = #{id,jdbcType=VARCHAR}, 
-    subject_class = #{subjectClass,jdbcType=VARCHAR}, 
-    degree_type = #{degreeType,jdbcType=VARCHAR}, 
-    score_polite = #{scorePolite,jdbcType=INTEGER}, 
-    score_english = #{scoreEnglish,jdbcType=INTEGER}, 
-    score_professional_1 = #{scoreProfessional1,jdbcType=INTEGER}, 
-    score_professional_2 = #{scoreProfessional2,jdbcType=INTEGER}, 
-    score_total = #{scoreTotal,jdbcType=INTEGER}, 
-    score_total_public = #{scoreTotalPublic,jdbcType=INTEGER}, 
+    on duplicate key update
+    id = #{id,jdbcType=VARCHAR},
+    subject_class = #{subjectClass,jdbcType=VARCHAR},
+    degree_type = #{degreeType,jdbcType=VARCHAR},
+    score_polite = #{scorePolite,jdbcType=INTEGER},
+    score_english = #{scoreEnglish,jdbcType=INTEGER},
+    score_professional_1 = #{scoreProfessional1,jdbcType=INTEGER},
+    score_professional_2 = #{scoreProfessional2,jdbcType=INTEGER},
+    score_total = #{scoreTotal,jdbcType=INTEGER},
+    score_total_public = #{scoreTotalPublic,jdbcType=INTEGER},
     score_total_professional = #{scoreTotalProfessional,jdbcType=INTEGER}
   </insert>
   <insert id="insertOrUpdateSelective" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.CollegeLine">
@@ -254,7 +254,7 @@
         #{scoreTotalProfessional,jdbcType=INTEGER},
       </if>
     </trim>
-    on duplicate key update 
+    on duplicate key update
     <trim suffixOverrides=",">
       <if test="id != null">
         id = #{id,jdbcType=VARCHAR},

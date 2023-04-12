@@ -3,8 +3,7 @@ package wo1261931780.JOSPexaminationSystemJava.service;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import java.util.List;
-import wo1261931780.JOSPexaminationSystemJava.dao.CollegeMapper;
+import wo1261931780.JOSPexaminationSystemJava.DAO.CollegeMapper;
 import wo1261931780.JOSPexaminationSystemJava.entity.College;
 /**
 *Created by Intellij IDEA.

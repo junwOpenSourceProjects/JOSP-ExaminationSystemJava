@@ -2,7 +2,7 @@ package wo1261931780.JOSPexaminationSystemJava.service;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
-import wo1261931780.JOSPexaminationSystemJava.dao.LoginUserMapper;
+import wo1261931780.JOSPexaminationSystemJava.DAO.LoginUserMapper;
 import wo1261931780.JOSPexaminationSystemJava.entity.LoginUser;
 
 import java.util.List;

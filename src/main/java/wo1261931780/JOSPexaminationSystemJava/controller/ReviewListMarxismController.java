@@ -25,6 +25,20 @@ import wo1261931780.JOSPexaminationSystemJava.service.ReviewListService;
 @RestController
 @RequestMapping("/ReviewListMarxism")
 public class ReviewListMarxismController {
+	// 查询学生表
+	// id关联查询成绩表，排名表，学院表，院线表
+	// 成绩表排名表返回各种数据
+	// 学院表返回学院名，院线表返回专业代码和专业名
+	// 合并为复试结果dto返回前端
+	// ============================================
+	// 一个独立的页面，多个按钮，分别是统计均分，
+	// 更新院线，统计同一个学院下的所有专业代码和专业名称，然后insert进去
+	// 排名按钮，查询同一个专业代码的list，同一个学院的list，同一个学校的list，然后更新排名
+	// 均分按钮
+	// 按照专业代码查询list，只查询录取的人数，分别按照考试的科目获取多个list，然后分别计算均分，然后更新到数据库
+	// 完善公共课专业课的总分按钮
+	// 查询所有的学生，然后计算对应的分数，update到数据库
+	// 成绩表，合并final_check的数据
 	
 	
 	@Autowired
@@ -47,10 +61,10 @@ public class ReviewListMarxismController {
 			lambdaQueryWrapper.or().like(ReviewList::getSubjectName, "科学技术史");
 			lambdaQueryWrapper.or().like(ReviewList::getSubjectName, "科学技术哲学");
 		}
-		//lambdaQueryWrapper.like(ReviewList::getSubjectName, "马克思主义理论");
+		// lambdaQueryWrapper.like(ReviewList::getSubjectName, "马克思主义理论");
 		//.or().like(ReviewList::getSubjectName, "科学技术史")
 		//.or().like(ReviewList::getSubjectName, "科学技术哲学");
-		//lambdaQueryWrapper.eq(ReviewList::getSubjectCode, subjectCode);
+		// lambdaQueryWrapper.eq(ReviewList::getSubjectCode, subjectCode);
 		switch (sort) {
 			case "0":// 总分降序
 				lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
@@ -68,7 +82,7 @@ public class ReviewListMarxismController {
 				lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
 				break;
 		}
-		//if (sort.equals("0")) {// 总分降序
+		// if (sort.equals("0")) {// 总分降序
 		//	lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
 		//} else {
 		//	lambdaQueryWrapper.orderByAsc(ReviewList::getScoreTotal);

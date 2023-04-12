@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="wo1261931780.JOSPexaminationSystemJava.dao.AcademyGenerateScoreMapper">
+<mapper namespace="wo1261931780.JOSPexaminationSystemJava.DAO.AcademyGenerateScoreMapper">
   <resultMap id="BaseResultMap" type="wo1261931780.JOSPexaminationSystemJava.entity.AcademyGenerateScore">
     <!--@mbg.generated-->
     <!--@Table academy_generate_score-->
@@ -20,8 +20,8 @@
   </resultMap>
   <sql id="Base_Column_List">
     <!--@mbg.generated-->
-    id, profession_code, profession_name, test_way, score_polite, score_english, score_professional_1, 
-    score_professional_2, score_total, score_total_public, score_total_professional, 
+    id, profession_code, profession_name, test_way, score_polite, score_english, score_professional_1,
+    score_professional_2, score_total, score_total_public, score_total_professional,
     academy_name, is_del
   </sql>
   <update id="updateBatch" parameterType="java.util.List">
@@ -191,44 +191,44 @@
   <insert id="batchInsert" parameterType="map">
     <!--@mbg.generated-->
     insert into academy_generate_score
-    (id, profession_code, profession_name, test_way, score_polite, score_english, score_professional_1, 
-      score_professional_2, score_total, score_total_public, score_total_professional, 
+    (id, profession_code, profession_name, test_way, score_polite, score_english, score_professional_1,
+      score_professional_2, score_total, score_total_public, score_total_professional,
       academy_name, is_del)
     values
     <foreach collection="list" item="item" separator=",">
-      (#{item.id,jdbcType=VARCHAR}, #{item.professionCode,jdbcType=INTEGER}, #{item.professionName,jdbcType=VARCHAR}, 
-        #{item.testWay,jdbcType=VARCHAR}, #{item.scorePolite,jdbcType=INTEGER}, #{item.scoreEnglish,jdbcType=INTEGER}, 
-        #{item.scoreProfessional1,jdbcType=INTEGER}, #{item.scoreProfessional2,jdbcType=INTEGER}, 
-        #{item.scoreTotal,jdbcType=INTEGER}, #{item.scoreTotalPublic,jdbcType=INTEGER}, 
-        #{item.scoreTotalProfessional,jdbcType=INTEGER}, #{item.academyName,jdbcType=VARCHAR}, 
+      (#{item.id,jdbcType=VARCHAR}, #{item.professionCode,jdbcType=INTEGER}, #{item.professionName,jdbcType=VARCHAR},
+        #{item.testWay,jdbcType=VARCHAR}, #{item.scorePolite,jdbcType=INTEGER}, #{item.scoreEnglish,jdbcType=INTEGER},
+        #{item.scoreProfessional1,jdbcType=INTEGER}, #{item.scoreProfessional2,jdbcType=INTEGER},
+        #{item.scoreTotal,jdbcType=INTEGER}, #{item.scoreTotalPublic,jdbcType=INTEGER},
+        #{item.scoreTotalProfessional,jdbcType=INTEGER}, #{item.academyName,jdbcType=VARCHAR},
         #{item.isDel,jdbcType=INTEGER})
     </foreach>
   </insert>
   <insert id="insertOrUpdate" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.AcademyGenerateScore">
     <!--@mbg.generated-->
     insert into academy_generate_score
-    (id, profession_code, profession_name, test_way, score_polite, score_english, score_professional_1, 
-      score_professional_2, score_total, score_total_public, score_total_professional, 
+    (id, profession_code, profession_name, test_way, score_polite, score_english, score_professional_1,
+      score_professional_2, score_total, score_total_public, score_total_professional,
       academy_name, is_del)
     values
-    (#{id,jdbcType=VARCHAR}, #{professionCode,jdbcType=INTEGER}, #{professionName,jdbcType=VARCHAR}, 
-      #{testWay,jdbcType=VARCHAR}, #{scorePolite,jdbcType=INTEGER}, #{scoreEnglish,jdbcType=INTEGER}, 
-      #{scoreProfessional1,jdbcType=INTEGER}, #{scoreProfessional2,jdbcType=INTEGER}, 
-      #{scoreTotal,jdbcType=INTEGER}, #{scoreTotalPublic,jdbcType=INTEGER}, #{scoreTotalProfessional,jdbcType=INTEGER}, 
+    (#{id,jdbcType=VARCHAR}, #{professionCode,jdbcType=INTEGER}, #{professionName,jdbcType=VARCHAR},
+      #{testWay,jdbcType=VARCHAR}, #{scorePolite,jdbcType=INTEGER}, #{scoreEnglish,jdbcType=INTEGER},
+      #{scoreProfessional1,jdbcType=INTEGER}, #{scoreProfessional2,jdbcType=INTEGER},
+      #{scoreTotal,jdbcType=INTEGER}, #{scoreTotalPublic,jdbcType=INTEGER}, #{scoreTotalProfessional,jdbcType=INTEGER},
       #{academyName,jdbcType=VARCHAR}, #{isDel,jdbcType=INTEGER})
-    on duplicate key update 
-    id = #{id,jdbcType=VARCHAR}, 
-    profession_code = #{professionCode,jdbcType=INTEGER}, 
-    profession_name = #{professionName,jdbcType=VARCHAR}, 
-    test_way = #{testWay,jdbcType=VARCHAR}, 
-    score_polite = #{scorePolite,jdbcType=INTEGER}, 
-    score_english = #{scoreEnglish,jdbcType=INTEGER}, 
-    score_professional_1 = #{scoreProfessional1,jdbcType=INTEGER}, 
-    score_professional_2 = #{scoreProfessional2,jdbcType=INTEGER}, 
-    score_total = #{scoreTotal,jdbcType=INTEGER}, 
-    score_total_public = #{scoreTotalPublic,jdbcType=INTEGER}, 
-    score_total_professional = #{scoreTotalProfessional,jdbcType=INTEGER}, 
-    academy_name = #{academyName,jdbcType=VARCHAR}, 
+    on duplicate key update
+    id = #{id,jdbcType=VARCHAR},
+    profession_code = #{professionCode,jdbcType=INTEGER},
+    profession_name = #{professionName,jdbcType=VARCHAR},
+    test_way = #{testWay,jdbcType=VARCHAR},
+    score_polite = #{scorePolite,jdbcType=INTEGER},
+    score_english = #{scoreEnglish,jdbcType=INTEGER},
+    score_professional_1 = #{scoreProfessional1,jdbcType=INTEGER},
+    score_professional_2 = #{scoreProfessional2,jdbcType=INTEGER},
+    score_total = #{scoreTotal,jdbcType=INTEGER},
+    score_total_public = #{scoreTotalPublic,jdbcType=INTEGER},
+    score_total_professional = #{scoreTotalProfessional,jdbcType=INTEGER},
+    academy_name = #{academyName,jdbcType=VARCHAR},
     is_del = #{isDel,jdbcType=INTEGER}
   </insert>
   <insert id="insertOrUpdateSelective" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.AcademyGenerateScore">
@@ -317,7 +317,7 @@
         #{isDel,jdbcType=INTEGER},
       </if>
     </trim>
-    on duplicate key update 
+    on duplicate key update
     <trim suffixOverrides=",">
       <if test="id != null">
         id = #{id,jdbcType=VARCHAR},
