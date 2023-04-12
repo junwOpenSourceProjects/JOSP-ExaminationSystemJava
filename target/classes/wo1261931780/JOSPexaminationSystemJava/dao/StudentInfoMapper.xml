@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wo1261931780.JOSPexaminationSystemJava.DAO.StudentInfoMapper">
+  <resultMap id="BaseResultMap" type="wo1261931780.JOSPexaminationSystemJava.entity.StudentInfo">
+    <!--@mbg.generated-->
+    <!--@Table student_info-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="student_name" jdbcType="VARCHAR" property="studentName" />
+    <result column="subject_code" jdbcType="VARCHAR" property="subjectCode" />
+    <result column="academy_code" jdbcType="VARCHAR" property="academyCode" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+    <result column="projects" jdbcType="VARCHAR" property="projects" />
+    <result column="other_remark" jdbcType="VARCHAR" property="otherRemark" />
+    <result column="study_forward" jdbcType="VARCHAR" property="studyForward" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, student_name, subject_code, academy_code, remark, projects, other_remark, study_forward
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update student_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="student_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.studentName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="subject_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.subjectCode,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="academy_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.academyCode,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="remark = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.remark,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="projects = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.projects,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="other_remark = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.otherRemark,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="study_forward = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.studyForward,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update student_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="student_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.studentName != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.studentName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="subject_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.subjectCode != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.subjectCode,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="academy_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.academyCode != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.academyCode,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="remark = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.remark != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.remark,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="projects = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.projects != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.projects,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="other_remark = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.otherRemark != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.otherRemark,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="study_forward = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.studyForward != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.studyForward,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into student_info
+    (id, student_name, subject_code, academy_code, remark, projects, other_remark, study_forward
+      )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=VARCHAR}, #{item.studentName,jdbcType=VARCHAR}, #{item.subjectCode,jdbcType=VARCHAR}, 
+        #{item.academyCode,jdbcType=VARCHAR}, #{item.remark,jdbcType=VARCHAR}, #{item.projects,jdbcType=VARCHAR}, 
+        #{item.otherRemark,jdbcType=VARCHAR}, #{item.studyForward,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.StudentInfo">
+    <!--@mbg.generated-->
+    insert into student_info
+    (id, student_name, subject_code, academy_code, remark, projects, other_remark, study_forward
+      )
+    values
+    (#{id,jdbcType=VARCHAR}, #{studentName,jdbcType=VARCHAR}, #{subjectCode,jdbcType=VARCHAR}, 
+      #{academyCode,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{projects,jdbcType=VARCHAR}, 
+      #{otherRemark,jdbcType=VARCHAR}, #{studyForward,jdbcType=VARCHAR})
+    on duplicate key update 
+    id = #{id,jdbcType=VARCHAR}, 
+    student_name = #{studentName,jdbcType=VARCHAR}, 
+    subject_code = #{subjectCode,jdbcType=VARCHAR}, 
+    academy_code = #{academyCode,jdbcType=VARCHAR}, 
+    remark = #{remark,jdbcType=VARCHAR}, 
+    projects = #{projects,jdbcType=VARCHAR}, 
+    other_remark = #{otherRemark,jdbcType=VARCHAR}, 
+    study_forward = #{studyForward,jdbcType=VARCHAR}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.StudentInfo">
+    <!--@mbg.generated-->
+    insert into student_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="studentName != null">
+        student_name,
+      </if>
+      <if test="subjectCode != null">
+        subject_code,
+      </if>
+      <if test="academyCode != null">
+        academy_code,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="projects != null">
+        projects,
+      </if>
+      <if test="otherRemark != null">
+        other_remark,
+      </if>
+      <if test="studyForward != null">
+        study_forward,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="studentName != null">
+        #{studentName,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectCode != null">
+        #{subjectCode,jdbcType=VARCHAR},
+      </if>
+      <if test="academyCode != null">
+        #{academyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="projects != null">
+        #{projects,jdbcType=VARCHAR},
+      </if>
+      <if test="otherRemark != null">
+        #{otherRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="studyForward != null">
+        #{studyForward,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="studentName != null">
+        student_name = #{studentName,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectCode != null">
+        subject_code = #{subjectCode,jdbcType=VARCHAR},
+      </if>
+      <if test="academyCode != null">
+        academy_code = #{academyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="projects != null">
+        projects = #{projects,jdbcType=VARCHAR},
+      </if>
+      <if test="otherRemark != null">
+        other_remark = #{otherRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="studyForward != null">
+        study_forward = #{studyForward,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

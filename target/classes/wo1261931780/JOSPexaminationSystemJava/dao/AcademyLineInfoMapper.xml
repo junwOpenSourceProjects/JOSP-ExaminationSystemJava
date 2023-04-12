@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wo1261931780.JOSPexaminationSystemJava.DAO.AcademyLineInfoMapper">
+  <resultMap id="BaseResultMap" type="wo1261931780.JOSPexaminationSystemJava.entity.AcademyLineInfo">
+    <!--@mbg.generated-->
+    <!--@Table academy_line_info-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="subject_name" jdbcType="VARCHAR" property="subjectName" />
+    <result column="academy_code" jdbcType="VARCHAR" property="academyCode" />
+    <result column="academy_name" jdbcType="VARCHAR" property="academyName" />
+    <result column="training_mode" jdbcType="VARCHAR" property="trainingMode" />
+    <result column="degree_type" jdbcType="VARCHAR" property="degreeType" />
+    <result column="study_forward" jdbcType="VARCHAR" property="studyForward" />
+    <result column="students_exempted" jdbcType="INTEGER" property="studentsExempted" />
+    <result column="students_enrolled_in_the_unified_examination" jdbcType="INTEGER" property="studentsEnrolledInTheUnifiedExamination" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, subject_name, academy_code, academy_name, training_mode, degree_type, study_forward, 
+    students_exempted, students_enrolled_in_the_unified_examination
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update academy_line_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="subject_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.subjectName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="academy_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.academyCode,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="academy_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.academyName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="training_mode = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.trainingMode,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="degree_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.degreeType,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="study_forward = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.studyForward,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="students_exempted = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.studentsExempted,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="students_enrolled_in_the_unified_examination = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.studentsEnrolledInTheUnifiedExamination,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update academy_line_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="subject_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.subjectName != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.subjectName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="academy_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.academyCode != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.academyCode,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="academy_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.academyName != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.academyName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="training_mode = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.trainingMode != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.trainingMode,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="degree_type = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.degreeType != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.degreeType,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="study_forward = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.studyForward != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.studyForward,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="students_exempted = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.studentsExempted != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.studentsExempted,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="students_enrolled_in_the_unified_examination = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.studentsEnrolledInTheUnifiedExamination != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.studentsEnrolledInTheUnifiedExamination,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into academy_line_info
+    (id, subject_name, academy_code, academy_name, training_mode, degree_type, study_forward, 
+      students_exempted, students_enrolled_in_the_unified_examination)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=VARCHAR}, #{item.subjectName,jdbcType=VARCHAR}, #{item.academyCode,jdbcType=VARCHAR}, 
+        #{item.academyName,jdbcType=VARCHAR}, #{item.trainingMode,jdbcType=VARCHAR}, #{item.degreeType,jdbcType=VARCHAR}, 
+        #{item.studyForward,jdbcType=VARCHAR}, #{item.studentsExempted,jdbcType=INTEGER}, 
+        #{item.studentsEnrolledInTheUnifiedExamination,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.AcademyLineInfo">
+    <!--@mbg.generated-->
+    insert into academy_line_info
+    (id, subject_name, academy_code, academy_name, training_mode, degree_type, study_forward, 
+      students_exempted, students_enrolled_in_the_unified_examination)
+    values
+    (#{id,jdbcType=VARCHAR}, #{subjectName,jdbcType=VARCHAR}, #{academyCode,jdbcType=VARCHAR}, 
+      #{academyName,jdbcType=VARCHAR}, #{trainingMode,jdbcType=VARCHAR}, #{degreeType,jdbcType=VARCHAR}, 
+      #{studyForward,jdbcType=VARCHAR}, #{studentsExempted,jdbcType=INTEGER}, #{studentsEnrolledInTheUnifiedExamination,jdbcType=INTEGER}
+      )
+    on duplicate key update 
+    id = #{id,jdbcType=VARCHAR}, 
+    subject_name = #{subjectName,jdbcType=VARCHAR}, 
+    academy_code = #{academyCode,jdbcType=VARCHAR}, 
+    academy_name = #{academyName,jdbcType=VARCHAR}, 
+    training_mode = #{trainingMode,jdbcType=VARCHAR}, 
+    degree_type = #{degreeType,jdbcType=VARCHAR}, 
+    study_forward = #{studyForward,jdbcType=VARCHAR}, 
+    students_exempted = #{studentsExempted,jdbcType=INTEGER}, 
+    students_enrolled_in_the_unified_examination = #{studentsEnrolledInTheUnifiedExamination,jdbcType=INTEGER}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.AcademyLineInfo">
+    <!--@mbg.generated-->
+    insert into academy_line_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="subjectName != null">
+        subject_name,
+      </if>
+      <if test="academyCode != null">
+        academy_code,
+      </if>
+      <if test="academyName != null">
+        academy_name,
+      </if>
+      <if test="trainingMode != null">
+        training_mode,
+      </if>
+      <if test="degreeType != null">
+        degree_type,
+      </if>
+      <if test="studyForward != null">
+        study_forward,
+      </if>
+      <if test="studentsExempted != null">
+        students_exempted,
+      </if>
+      <if test="studentsEnrolledInTheUnifiedExamination != null">
+        students_enrolled_in_the_unified_examination,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectName != null">
+        #{subjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="academyCode != null">
+        #{academyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="academyName != null">
+        #{academyName,jdbcType=VARCHAR},
+      </if>
+      <if test="trainingMode != null">
+        #{trainingMode,jdbcType=VARCHAR},
+      </if>
+      <if test="degreeType != null">
+        #{degreeType,jdbcType=VARCHAR},
+      </if>
+      <if test="studyForward != null">
+        #{studyForward,jdbcType=VARCHAR},
+      </if>
+      <if test="studentsExempted != null">
+        #{studentsExempted,jdbcType=INTEGER},
+      </if>
+      <if test="studentsEnrolledInTheUnifiedExamination != null">
+        #{studentsEnrolledInTheUnifiedExamination,jdbcType=INTEGER},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectName != null">
+        subject_name = #{subjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="academyCode != null">
+        academy_code = #{academyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="academyName != null">
+        academy_name = #{academyName,jdbcType=VARCHAR},
+      </if>
+      <if test="trainingMode != null">
+        training_mode = #{trainingMode,jdbcType=VARCHAR},
+      </if>
+      <if test="degreeType != null">
+        degree_type = #{degreeType,jdbcType=VARCHAR},
+      </if>
+      <if test="studyForward != null">
+        study_forward = #{studyForward,jdbcType=VARCHAR},
+      </if>
+      <if test="studentsExempted != null">
+        students_exempted = #{studentsExempted,jdbcType=INTEGER},
+      </if>
+      <if test="studentsEnrolledInTheUnifiedExamination != null">
+        students_enrolled_in_the_unified_examination = #{studentsEnrolledInTheUnifiedExamination,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wo1261931780.JOSPexaminationSystemJava.DAO.RankInfoMapper">
+  <resultMap id="BaseResultMap" type="wo1261931780.JOSPexaminationSystemJava.entity.RankInfo">
+    <!--@mbg.generated-->
+    <!--@Table rank_info-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="rank_polite" jdbcType="VARCHAR" property="rankPolite" />
+    <result column="rank_english" jdbcType="VARCHAR" property="rankEnglish" />
+    <result column="rank_professional_1" jdbcType="VARCHAR" property="rankProfessional1" />
+    <result column="rank_professional_2" jdbcType="VARCHAR" property="rankProfessional2" />
+    <result column="rank_total_first" jdbcType="VARCHAR" property="rankTotalFirst" />
+    <result column="rank_total_review" jdbcType="VARCHAR" property="rankTotalReview" />
+    <result column="rank_total" jdbcType="VARCHAR" property="rankTotal" />
+    <result column="rank_total_public" jdbcType="VARCHAR" property="rankTotalPublic" />
+    <result column="rank_total_professional" jdbcType="VARCHAR" property="rankTotalProfessional" />
+    <result column="sort" jdbcType="VARCHAR" property="sort" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, rank_polite, rank_english, rank_professional_1, rank_professional_2, rank_total_first, 
+    rank_total_review, rank_total, rank_total_public, rank_total_professional, sort
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update rank_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="rank_polite = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.rankPolite,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="rank_english = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.rankEnglish,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="rank_professional_1 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.rankProfessional1,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="rank_professional_2 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.rankProfessional2,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="rank_total_first = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.rankTotalFirst,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="rank_total_review = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.rankTotalReview,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="rank_total = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.rankTotal,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="rank_total_public = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.rankTotalPublic,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="rank_total_professional = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.rankTotalProfessional,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="sort = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.sort,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update rank_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="rank_polite = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.rankPolite != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.rankPolite,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="rank_english = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.rankEnglish != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.rankEnglish,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="rank_professional_1 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.rankProfessional1 != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.rankProfessional1,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="rank_professional_2 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.rankProfessional2 != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.rankProfessional2,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="rank_total_first = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.rankTotalFirst != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.rankTotalFirst,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="rank_total_review = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.rankTotalReview != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.rankTotalReview,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="rank_total = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.rankTotal != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.rankTotal,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="rank_total_public = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.rankTotalPublic != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.rankTotalPublic,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="rank_total_professional = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.rankTotalProfessional != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.rankTotalProfessional,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="sort = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.sort != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.sort,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into rank_info
+    (id, rank_polite, rank_english, rank_professional_1, rank_professional_2, rank_total_first, 
+      rank_total_review, rank_total, rank_total_public, rank_total_professional, sort
+      )
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=VARCHAR}, #{item.rankPolite,jdbcType=VARCHAR}, #{item.rankEnglish,jdbcType=VARCHAR}, 
+        #{item.rankProfessional1,jdbcType=VARCHAR}, #{item.rankProfessional2,jdbcType=VARCHAR}, 
+        #{item.rankTotalFirst,jdbcType=VARCHAR}, #{item.rankTotalReview,jdbcType=VARCHAR}, 
+        #{item.rankTotal,jdbcType=VARCHAR}, #{item.rankTotalPublic,jdbcType=VARCHAR}, #{item.rankTotalProfessional,jdbcType=VARCHAR}, 
+        #{item.sort,jdbcType=VARCHAR})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.RankInfo">
+    <!--@mbg.generated-->
+    insert into rank_info
+    (id, rank_polite, rank_english, rank_professional_1, rank_professional_2, rank_total_first, 
+      rank_total_review, rank_total, rank_total_public, rank_total_professional, sort
+      )
+    values
+    (#{id,jdbcType=VARCHAR}, #{rankPolite,jdbcType=VARCHAR}, #{rankEnglish,jdbcType=VARCHAR}, 
+      #{rankProfessional1,jdbcType=VARCHAR}, #{rankProfessional2,jdbcType=VARCHAR}, #{rankTotalFirst,jdbcType=VARCHAR}, 
+      #{rankTotalReview,jdbcType=VARCHAR}, #{rankTotal,jdbcType=VARCHAR}, #{rankTotalPublic,jdbcType=VARCHAR}, 
+      #{rankTotalProfessional,jdbcType=VARCHAR}, #{sort,jdbcType=VARCHAR})
+    on duplicate key update 
+    id = #{id,jdbcType=VARCHAR}, 
+    rank_polite = #{rankPolite,jdbcType=VARCHAR}, 
+    rank_english = #{rankEnglish,jdbcType=VARCHAR}, 
+    rank_professional_1 = #{rankProfessional1,jdbcType=VARCHAR}, 
+    rank_professional_2 = #{rankProfessional2,jdbcType=VARCHAR}, 
+    rank_total_first = #{rankTotalFirst,jdbcType=VARCHAR}, 
+    rank_total_review = #{rankTotalReview,jdbcType=VARCHAR}, 
+    rank_total = #{rankTotal,jdbcType=VARCHAR}, 
+    rank_total_public = #{rankTotalPublic,jdbcType=VARCHAR}, 
+    rank_total_professional = #{rankTotalProfessional,jdbcType=VARCHAR}, 
+    sort = #{sort,jdbcType=VARCHAR}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.RankInfo">
+    <!--@mbg.generated-->
+    insert into rank_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="rankPolite != null">
+        rank_polite,
+      </if>
+      <if test="rankEnglish != null">
+        rank_english,
+      </if>
+      <if test="rankProfessional1 != null">
+        rank_professional_1,
+      </if>
+      <if test="rankProfessional2 != null">
+        rank_professional_2,
+      </if>
+      <if test="rankTotalFirst != null">
+        rank_total_first,
+      </if>
+      <if test="rankTotalReview != null">
+        rank_total_review,
+      </if>
+      <if test="rankTotal != null">
+        rank_total,
+      </if>
+      <if test="rankTotalPublic != null">
+        rank_total_public,
+      </if>
+      <if test="rankTotalProfessional != null">
+        rank_total_professional,
+      </if>
+      <if test="sort != null">
+        sort,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="rankPolite != null">
+        #{rankPolite,jdbcType=VARCHAR},
+      </if>
+      <if test="rankEnglish != null">
+        #{rankEnglish,jdbcType=VARCHAR},
+      </if>
+      <if test="rankProfessional1 != null">
+        #{rankProfessional1,jdbcType=VARCHAR},
+      </if>
+      <if test="rankProfessional2 != null">
+        #{rankProfessional2,jdbcType=VARCHAR},
+      </if>
+      <if test="rankTotalFirst != null">
+        #{rankTotalFirst,jdbcType=VARCHAR},
+      </if>
+      <if test="rankTotalReview != null">
+        #{rankTotalReview,jdbcType=VARCHAR},
+      </if>
+      <if test="rankTotal != null">
+        #{rankTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="rankTotalPublic != null">
+        #{rankTotalPublic,jdbcType=VARCHAR},
+      </if>
+      <if test="rankTotalProfessional != null">
+        #{rankTotalProfessional,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        #{sort,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="rankPolite != null">
+        rank_polite = #{rankPolite,jdbcType=VARCHAR},
+      </if>
+      <if test="rankEnglish != null">
+        rank_english = #{rankEnglish,jdbcType=VARCHAR},
+      </if>
+      <if test="rankProfessional1 != null">
+        rank_professional_1 = #{rankProfessional1,jdbcType=VARCHAR},
+      </if>
+      <if test="rankProfessional2 != null">
+        rank_professional_2 = #{rankProfessional2,jdbcType=VARCHAR},
+      </if>
+      <if test="rankTotalFirst != null">
+        rank_total_first = #{rankTotalFirst,jdbcType=VARCHAR},
+      </if>
+      <if test="rankTotalReview != null">
+        rank_total_review = #{rankTotalReview,jdbcType=VARCHAR},
+      </if>
+      <if test="rankTotal != null">
+        rank_total = #{rankTotal,jdbcType=VARCHAR},
+      </if>
+      <if test="rankTotalPublic != null">
+        rank_total_public = #{rankTotalPublic,jdbcType=VARCHAR},
+      </if>
+      <if test="rankTotalProfessional != null">
+        rank_total_professional = #{rankTotalProfessional,jdbcType=VARCHAR},
+      </if>
+      <if test="sort != null">
+        sort = #{sort,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

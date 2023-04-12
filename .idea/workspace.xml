@@ -5,51 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85b84b91-2d1b-4821-ab0b-02d70d8835b5" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/FinalCheckListDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/MarxismListDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3fcbdd49-44aa-487c-ae13-af08a695514a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3fcbdd49-44aa-487c-ae13-af08a695514a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/StudentListDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/MyBatisCodeHelperDatasource.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyBatisCodeHelperDatasource.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JOSP-ExaminationSystemJava.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JOSP-ExaminationSystemJava.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/ReviewListMarxismController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/ReviewListMarxismController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/dao/AcademyGenerateScoreMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DAO/AcademyGenerateScoreMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/dao/AcademyLineMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DAO/AcademyLineMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/dao/CollegeLineMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DAO/CollegeLineMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/dao/CollegeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DAO/CollegeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/dao/ComplexTableMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DAO/ComplexTableMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/dao/LoginUserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DAO/LoginUserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/dao/MergeDatabaseMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DAO/MergeDatabaseMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/dao/NationalLineMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DAO/NationalLineMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/dao/ReviewListMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DAO/ReviewListMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/AcademyGenerateScoreService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/AcademyGenerateScoreService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/AcademyLineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/AcademyLineService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/CollegeLineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/CollegeLineService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/CollegeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/CollegeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/ComplexTableService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/ComplexTableService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/LoginUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/LoginUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/MergeDatabaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/MergeDatabaseService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/NationalLineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/NationalLineService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/ReviewListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/service/ReviewListService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/dao/AcademyGenerateScoreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/DAO/AcademyGenerateScoreMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/dao/AcademyLineMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/DAO/AcademyLineMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/dao/CollegeLineMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/DAO/CollegeLineMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/dao/CollegeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/DAO/CollegeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/dao/ComplexTableMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/DAO/ComplexTableMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/dao/LoginUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/DAO/LoginUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/dao/MergeDatabaseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/DAO/MergeDatabaseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/dao/NationalLineMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/DAO/NationalLineMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/dao/ReviewListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/wo1261931780/JOSPexaminationSystemJava/DAO/ReviewListMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/AcademyGenerateScoreMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/AcademyGenerateScoreMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/AcademyLineMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/AcademyLineMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/CollegeLineMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/CollegeLineMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/CollegeMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/CollegeMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/ComplexTableMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/ComplexTableMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/LoginUserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/LoginUserMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/MergeDatabaseMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/MergeDatabaseMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/NationalLineMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/NationalLineMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/ReviewListMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/wo1261931780/JOSPexaminationSystemJava/dao/ReviewListMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/FinalCheckListDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/AcademySubjectListDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/MarxismListDTO.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -136,7 +96,7 @@
       <workItem from="1681262631581" duration="53000" />
       <workItem from="1681292918015" duration="1097000" />
       <workItem from="1681301622978" duration="84000" />
-      <workItem from="1681301747389" duration="3933000" />
+      <workItem from="1681301747389" duration="9166000" />
     </task>
     <servers />
   </component>

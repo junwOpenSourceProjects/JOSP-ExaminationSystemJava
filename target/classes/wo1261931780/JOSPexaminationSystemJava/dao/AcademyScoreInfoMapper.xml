@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wo1261931780.JOSPexaminationSystemJava.DAO.AcademyScoreInfoMapper">
+  <resultMap id="BaseResultMap" type="wo1261931780.JOSPexaminationSystemJava.entity.AcademyScoreInfo">
+    <!--@mbg.generated-->
+    <!--@Table academy_score_info-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="academy_code" jdbcType="VARCHAR" property="academyCode" />
+    <result column="academy_name" jdbcType="VARCHAR" property="academyName" />
+    <result column="average_polite" jdbcType="INTEGER" property="averagePolite" />
+    <result column="average_english" jdbcType="INTEGER" property="averageEnglish" />
+    <result column="average_professional_1" jdbcType="INTEGER" property="averageProfessional1" />
+    <result column="average_professional_2" jdbcType="INTEGER" property="averageProfessional2" />
+    <result column="average_total_first" jdbcType="INTEGER" property="averageTotalFirst" />
+    <result column="average_total_review" jdbcType="INTEGER" property="averageTotalReview" />
+    <result column="average_total" jdbcType="INTEGER" property="averageTotal" />
+    <result column="average_total_public" jdbcType="INTEGER" property="averageTotalPublic" />
+    <result column="average_total_professional" jdbcType="INTEGER" property="averageTotalProfessional" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, academy_code, academy_name, average_polite, average_english, average_professional_1, 
+    average_professional_2, average_total_first, average_total_review, average_total, 
+    average_total_public, average_total_professional
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update academy_score_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="academy_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.academyCode,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="academy_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.academyName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="average_polite = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.averagePolite,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="average_english = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.averageEnglish,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="average_professional_1 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.averageProfessional1,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="average_professional_2 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.averageProfessional2,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="average_total_first = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.averageTotalFirst,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="average_total_review = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.averageTotalReview,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="average_total = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.averageTotal,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="average_total_public = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.averageTotalPublic,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="average_total_professional = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.averageTotalProfessional,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update academy_score_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="academy_code = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.academyCode != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.academyCode,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="academy_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.academyName != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.academyName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="average_polite = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.averagePolite != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.averagePolite,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="average_english = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.averageEnglish != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.averageEnglish,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="average_professional_1 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.averageProfessional1 != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.averageProfessional1,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="average_professional_2 = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.averageProfessional2 != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.averageProfessional2,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="average_total_first = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.averageTotalFirst != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.averageTotalFirst,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="average_total_review = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.averageTotalReview != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.averageTotalReview,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="average_total = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.averageTotal != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.averageTotal,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="average_total_public = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.averageTotalPublic != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.averageTotalPublic,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="average_total_professional = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.averageTotalProfessional != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.averageTotalProfessional,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into academy_score_info
+    (id, academy_code, academy_name, average_polite, average_english, average_professional_1, 
+      average_professional_2, average_total_first, average_total_review, average_total, 
+      average_total_public, average_total_professional)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=VARCHAR}, #{item.academyCode,jdbcType=VARCHAR}, #{item.academyName,jdbcType=VARCHAR}, 
+        #{item.averagePolite,jdbcType=INTEGER}, #{item.averageEnglish,jdbcType=INTEGER}, 
+        #{item.averageProfessional1,jdbcType=INTEGER}, #{item.averageProfessional2,jdbcType=INTEGER}, 
+        #{item.averageTotalFirst,jdbcType=INTEGER}, #{item.averageTotalReview,jdbcType=INTEGER}, 
+        #{item.averageTotal,jdbcType=INTEGER}, #{item.averageTotalPublic,jdbcType=INTEGER}, 
+        #{item.averageTotalProfessional,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.AcademyScoreInfo">
+    <!--@mbg.generated-->
+    insert into academy_score_info
+    (id, academy_code, academy_name, average_polite, average_english, average_professional_1, 
+      average_professional_2, average_total_first, average_total_review, average_total, 
+      average_total_public, average_total_professional)
+    values
+    (#{id,jdbcType=VARCHAR}, #{academyCode,jdbcType=VARCHAR}, #{academyName,jdbcType=VARCHAR}, 
+      #{averagePolite,jdbcType=INTEGER}, #{averageEnglish,jdbcType=INTEGER}, #{averageProfessional1,jdbcType=INTEGER}, 
+      #{averageProfessional2,jdbcType=INTEGER}, #{averageTotalFirst,jdbcType=INTEGER}, 
+      #{averageTotalReview,jdbcType=INTEGER}, #{averageTotal,jdbcType=INTEGER}, #{averageTotalPublic,jdbcType=INTEGER}, 
+      #{averageTotalProfessional,jdbcType=INTEGER})
+    on duplicate key update 
+    id = #{id,jdbcType=VARCHAR}, 
+    academy_code = #{academyCode,jdbcType=VARCHAR}, 
+    academy_name = #{academyName,jdbcType=VARCHAR}, 
+    average_polite = #{averagePolite,jdbcType=INTEGER}, 
+    average_english = #{averageEnglish,jdbcType=INTEGER}, 
+    average_professional_1 = #{averageProfessional1,jdbcType=INTEGER}, 
+    average_professional_2 = #{averageProfessional2,jdbcType=INTEGER}, 
+    average_total_first = #{averageTotalFirst,jdbcType=INTEGER}, 
+    average_total_review = #{averageTotalReview,jdbcType=INTEGER}, 
+    average_total = #{averageTotal,jdbcType=INTEGER}, 
+    average_total_public = #{averageTotalPublic,jdbcType=INTEGER}, 
+    average_total_professional = #{averageTotalProfessional,jdbcType=INTEGER}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.AcademyScoreInfo">
+    <!--@mbg.generated-->
+    insert into academy_score_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="academyCode != null">
+        academy_code,
+      </if>
+      <if test="academyName != null">
+        academy_name,
+      </if>
+      <if test="averagePolite != null">
+        average_polite,
+      </if>
+      <if test="averageEnglish != null">
+        average_english,
+      </if>
+      <if test="averageProfessional1 != null">
+        average_professional_1,
+      </if>
+      <if test="averageProfessional2 != null">
+        average_professional_2,
+      </if>
+      <if test="averageTotalFirst != null">
+        average_total_first,
+      </if>
+      <if test="averageTotalReview != null">
+        average_total_review,
+      </if>
+      <if test="averageTotal != null">
+        average_total,
+      </if>
+      <if test="averageTotalPublic != null">
+        average_total_public,
+      </if>
+      <if test="averageTotalProfessional != null">
+        average_total_professional,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="academyCode != null">
+        #{academyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="academyName != null">
+        #{academyName,jdbcType=VARCHAR},
+      </if>
+      <if test="averagePolite != null">
+        #{averagePolite,jdbcType=INTEGER},
+      </if>
+      <if test="averageEnglish != null">
+        #{averageEnglish,jdbcType=INTEGER},
+      </if>
+      <if test="averageProfessional1 != null">
+        #{averageProfessional1,jdbcType=INTEGER},
+      </if>
+      <if test="averageProfessional2 != null">
+        #{averageProfessional2,jdbcType=INTEGER},
+      </if>
+      <if test="averageTotalFirst != null">
+        #{averageTotalFirst,jdbcType=INTEGER},
+      </if>
+      <if test="averageTotalReview != null">
+        #{averageTotalReview,jdbcType=INTEGER},
+      </if>
+      <if test="averageTotal != null">
+        #{averageTotal,jdbcType=INTEGER},
+      </if>
+      <if test="averageTotalPublic != null">
+        #{averageTotalPublic,jdbcType=INTEGER},
+      </if>
+      <if test="averageTotalProfessional != null">
+        #{averageTotalProfessional,jdbcType=INTEGER},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="academyCode != null">
+        academy_code = #{academyCode,jdbcType=VARCHAR},
+      </if>
+      <if test="academyName != null">
+        academy_name = #{academyName,jdbcType=VARCHAR},
+      </if>
+      <if test="averagePolite != null">
+        average_polite = #{averagePolite,jdbcType=INTEGER},
+      </if>
+      <if test="averageEnglish != null">
+        average_english = #{averageEnglish,jdbcType=INTEGER},
+      </if>
+      <if test="averageProfessional1 != null">
+        average_professional_1 = #{averageProfessional1,jdbcType=INTEGER},
+      </if>
+      <if test="averageProfessional2 != null">
+        average_professional_2 = #{averageProfessional2,jdbcType=INTEGER},
+      </if>
+      <if test="averageTotalFirst != null">
+        average_total_first = #{averageTotalFirst,jdbcType=INTEGER},
+      </if>
+      <if test="averageTotalReview != null">
+        average_total_review = #{averageTotalReview,jdbcType=INTEGER},
+      </if>
+      <if test="averageTotal != null">
+        average_total = #{averageTotal,jdbcType=INTEGER},
+      </if>
+      <if test="averageTotalPublic != null">
+        average_total_public = #{averageTotalPublic,jdbcType=INTEGER},
+      </if>
+      <if test="averageTotalProfessional != null">
+        average_total_professional = #{averageTotalProfessional,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>
