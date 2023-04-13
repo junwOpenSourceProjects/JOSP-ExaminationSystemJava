@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85b84b91-2d1b-4821-ab0b-02d70d8835b5" name="变更" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/StudentListDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/StudentInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MyBatisCodeHelperDatasource.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/MyBatisCodeHelperDatasource.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3fcbdd49-44aa-487c-ae13-af08a695514a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3fcbdd49-44aa-487c-ae13-af08a695514a.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/FinalCheckListDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/AcademySubjectListDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/MarxismListDTO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/AcademySubjectListDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/AcademySubjectListDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/StudentListDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/StudentListDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/AcademyLineInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/AcademyLineInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/AcademyScoreInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/AcademyScoreInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/RankInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/RankInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/ScoreInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/ScoreInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/StudentInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/entity/StudentInfo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/wo1261931780/JOSPexaminationSystemJava/JospExaminationSystemJavaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/wo1261931780/JOSPexaminationSystemJava/JospExaminationSystemJavaApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +82,39 @@
       </set>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.JospExaminationSystemJavaApplicationTests.showMeResult (1)">
+    <configuration name="JospExaminationSystemJavaApplicationTests.showMeResult (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JOSP-ExaminationSystemJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="wo1261931780.JOSPexaminationSystemJava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="wo1261931780.JOSPexaminationSystemJava" />
+      <option name="MAIN_CLASS_NAME" value="wo1261931780.JOSPexaminationSystemJava.JospExaminationSystemJavaApplicationTests" />
+      <option name="METHOD_NAME" value="showMeResult" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="JospExaminationSystemJavaApplicationTests.showMeResult" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="JOSP-ExaminationSystemJava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="wo1261931780.JOSPexaminationSystemJava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="wo1261931780.JOSPexaminationSystemJava" />
+      <option name="MAIN_CLASS_NAME" value="wo1261931780.JOSPexaminationSystemJava.JospExaminationSystemJavaApplicationTests" />
+      <option name="METHOD_NAME" value="showMeResult(java.lang.Integer,java.lang.Integer,java.lang.String,java.lang.String,java.lang.String)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JospExaminationSystemJavaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="JOSP-ExaminationSystemJava" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="wo1261931780.JOSPexaminationSystemJava.JospExaminationSystemJavaApplication" />
@@ -82,6 +122,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.JospExaminationSystemJavaApplicationTests.showMeResult (1)" />
+        <item itemvalue="JUnit.JospExaminationSystemJavaApplicationTests.showMeResult" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -96,11 +142,28 @@
       <workItem from="1681262631581" duration="53000" />
       <workItem from="1681292918015" duration="1097000" />
       <workItem from="1681301622978" duration="84000" />
-      <workItem from="1681301747389" duration="9166000" />
+      <workItem from="1681301747389" duration="12189000" />
+      <workItem from="1681351627584" duration="5109000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/wo1261931780/JOSPexaminationSystemJava/JospExaminationSystemJavaApplicationTests.java</url>
+          <line>109</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/wo1261931780/JOSPexaminationSystemJava/JospExaminationSystemJavaApplicationTests.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

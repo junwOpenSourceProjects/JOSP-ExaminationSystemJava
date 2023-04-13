@@ -2819,26 +2819,29 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
-    <column id="649" parent="320" name="student_code">
+    <column id="649" parent="320" name="id">
       <Comment>主键，学生编号</Comment>
       <DasType>varchar(255)|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
     <column id="650" parent="320" name="score_total_first">
+      <Comment>初试总分</Comment>
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="651" parent="320" name="score_total_review">
+      <Comment>复试总分</Comment>
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="652" parent="320" name="score_total">
+      <Comment>最终成绩</Comment>
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
     <index id="653" parent="320" name="PRIMARY">
-      <ColNames>student_code</ColNames>
+      <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>

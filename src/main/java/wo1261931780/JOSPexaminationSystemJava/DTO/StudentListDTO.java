@@ -13,11 +13,7 @@ import lombok.Data;
  */
 @Data
 public class StudentListDTO {
-	// 查询学生表
-	// id关联查询成绩表，排名表，学院表，院线表
-	// 成绩表排名表返回各种数据
-	// 学院表返回学院名，院线表返回专业代码和专业名
-	// 合并为复试结果dto返回前端
+
 	
 	
 	/**

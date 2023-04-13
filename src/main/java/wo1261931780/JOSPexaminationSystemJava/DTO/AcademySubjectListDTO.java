@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableId;
 import io.swagger.annotations.ApiModelProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import wo1261931780.JOSPexaminationSystemJava.entity.AcademyLineInfo;
 
 /**
@@ -17,27 +18,28 @@ import wo1261931780.JOSPexaminationSystemJava.entity.AcademyLineInfo;
  * @Date 2023-04-20-41  星期三
  * @description
  */
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class AcademySubjectListDTO extends AcademyLineInfo {
 	
 	/**
 	 * 录取均分
 	 */
-	private Integer CheckedAverageScore;
+	private Integer checkedAverageScore;
 	
 	/**
 	 * 录取最高分
 	 */
-	private Integer CheckedHighScore;
+	private Integer checkedHighScore;
 	
 	/**
 	 * 录取最低分
 	 */
-	private Integer CheckedLowScore;
+	private Integer checkedLowScore;
 	
 	/**
 	 * 复试均分
 	 */
-	private Integer ReviewListAverageScore;
+	private Integer reviewListAverageScore;
 	
 }

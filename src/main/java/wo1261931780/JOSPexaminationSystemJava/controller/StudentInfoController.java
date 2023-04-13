@@ -1,35 +1,60 @@
-package wo1261931780.JOSPexaminationSystemJava;
+package wo1261931780.JOSPexaminationSystemJava.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
+import jakarta.annotation.Resource;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import wo1261931780.JOSPexaminationSystemJava.DAO.ScoreInfoMapper;
 import wo1261931780.JOSPexaminationSystemJava.DTO.StudentListDTO;
 import wo1261931780.JOSPexaminationSystemJava.config.ShowResult;
 import wo1261931780.JOSPexaminationSystemJava.entity.AcademyLineInfo;
 import wo1261931780.JOSPexaminationSystemJava.entity.College;
+import wo1261931780.JOSPexaminationSystemJava.entity.RankInfo;
+import wo1261931780.JOSPexaminationSystemJava.entity.ReviewList;
 import wo1261931780.JOSPexaminationSystemJava.entity.ScoreInfo;
 import wo1261931780.JOSPexaminationSystemJava.entity.StudentInfo;
 import wo1261931780.JOSPexaminationSystemJava.service.AcademyLineInfoService;
 import wo1261931780.JOSPexaminationSystemJava.service.CollegeService;
+import wo1261931780.JOSPexaminationSystemJava.service.RankInfoService;
 import wo1261931780.JOSPexaminationSystemJava.service.ScoreInfoService;
 import wo1261931780.JOSPexaminationSystemJava.service.StudentInfoService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
-@SpringBootTest
-@Slf4j
-class JospExaminationSystemJavaApplicationTests {
+/**
+ * Created by Intellij IDEA.
+ * Project:JOSP-ExaminationSystemJava
+ * Package:wo1261931780.JOSPexaminationSystemJava.controller
+ *
+ * @author liujiajun_junw
+ * @Date 2023-04-02-11  星期四
+ * @description
+ */
+@RestController
+@RequestMapping("/StudentInfo")
+public class StudentInfoController {
+	// todo 封装echarts数据结构
+	// echarts数据视图统一返回到response中
+	
 	
 	@Autowired
 	private StudentInfoService studentInfoService;
 	
 	@Autowired
 	private ScoreInfoService scoreInfoService;
+	
+	@Resource
+	private ScoreInfoMapper scoreInfoMapper;
+	
+	@Autowired
+	private RankInfoService rankInfoService;
 	
 	@Autowired
 	private CollegeService collegeService;
@@ -38,13 +63,11 @@ class JospExaminationSystemJavaApplicationTests {
 	private AcademyLineInfoService academyLineInfoService;
 	
 	
-	@Autowired
-	private ScoreBakcupService scoreBakcupService;
-	
-	@Test
-	void showMeResult() {
-		int page = 1;
-		int limit = 10;
+	@GetMapping("/list")
+	public ShowResult<Page<StudentListDTO>> showMeMaxismReviewListPage(@RequestParam Integer page
+			, @RequestParam Integer limit
+			, @RequestParam String sort
+			, String studentName, String subjectCode, String isChecked) {
 		// 返回的是dto
 		Page<StudentListDTO> studentListDTOPage = new Page<>();
 		studentListDTOPage.setCurrent(page);
@@ -60,9 +83,9 @@ class JospExaminationSystemJavaApplicationTests {
 		studentInfoPage.setSize(limit);
 		
 		LambdaQueryWrapper<StudentInfo> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-		// if (studentName != null && !studentName.equals("")) {
-		// 	lambdaQueryWrapper.like(StudentInfo::getStudentName, studentName);
-		// }
+		if (studentName != null && !studentName.equals("")) {
+			lambdaQueryWrapper.like(StudentInfo::getStudentName, studentName);
+		}
 		// 设置查询条件，查询所有马理论的研究生
 		lambdaQueryWrapper.eq(StudentInfo::getSubjectCode, "030500");
 		// todo 其实这里可以用in查询，添加一个mapper就可以了
@@ -74,18 +97,12 @@ class JospExaminationSystemJavaApplicationTests {
 		for (StudentInfo studentInfo : studentInfoList) {
 			StudentListDTO studentListDTO = new StudentListDTO();
 			BeanUtils.copyProperties(studentInfo, studentListDTO);// 拷贝属性到新增的内部
-			studentListDTO.setStudentCode(studentInfo.getId());// 手动新增id进去
 			// 学生编号获取成功
 			String studentCode = studentListDTO.getStudentCode();
 			// id关联查询成绩表
 			// 成绩表排名表返回各种数据
 			ScoreInfo scoreInfo = scoreInfoService.getById(studentCode);
 			BeanUtils.copyProperties(scoreInfo, studentListDTO);// 获取成绩数据，然后set进去
-			if (studentListDTO.getScoreTotal() == 0 || studentListDTO.getScoreTotal().equals("")) {
-				ScoreBakcup scoreBakcup = scoreBakcupService.getById(studentCode);
-				BeanUtils.copyProperties(scoreBakcup, studentListDTO);// 拷贝不存在的复试成绩
-			}
-			
 			// 获取排名数据
 			// RankInfo rankInfo = rankInfoService.getById(studentCode);
 			// BeanUtils.copyProperties(rankInfo, studentListDTO);
@@ -105,8 +122,6 @@ class JospExaminationSystemJavaApplicationTests {
 		
 		// 合并为复试结果dto返回前端
 		studentListDTOPage.setRecords(studentListDTOS);
-		log.info(ShowResult.sendSuccess(studentListDTOPage).toString());
-		// return ShowResult.sendSuccess(studentListDTOPage);
+		return ShowResult.sendSuccess(studentListDTOPage);
 	}
-	
 }
