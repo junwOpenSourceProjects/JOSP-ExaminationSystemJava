@@ -1,13 +1,10 @@
 package wo1261931780.JOSPexaminationSystemJava.DTO;
 
-import com.baomidou.mybatisplus.annotation.IdType;
-import com.baomidou.mybatisplus.annotation.TableField;
-import com.baomidou.mybatisplus.annotation.TableId;
-import io.swagger.annotations.ApiModelProperty;
-import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import wo1261931780.JOSPexaminationSystemJava.entity.AcademyLineInfo;
+
+import java.util.OptionalDouble;
 
 /**
  * Created by Intellij IDEA.
@@ -25,7 +22,7 @@ public class AcademySubjectListDTO extends AcademyLineInfo {
 	/**
 	 * 录取均分
 	 */
-	private Integer checkedAverageScore;
+	private OptionalDouble checkedAverageScore;
 	
 	/**
 	 * 录取最高分
@@ -40,6 +37,6 @@ public class AcademySubjectListDTO extends AcademyLineInfo {
 	/**
 	 * 复试均分
 	 */
-	private Integer reviewListAverageScore;
+	private OptionalDouble reviewListAverageScore;
 	
 }

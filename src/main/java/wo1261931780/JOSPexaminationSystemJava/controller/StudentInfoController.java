@@ -69,7 +69,7 @@ public class StudentInfoController {
 	
 	
 	@GetMapping("/list")
-	public ShowResult<Page<StudentListDTO>> showMeMaxismReviewListPage(@RequestParam Integer page
+	public ShowResult<Page<StudentListDTO>> showMeMarxismReviewListPage(@RequestParam Integer page
 			, @RequestParam Integer limit
 			, @RequestParam String sort
 			, String studentName, String subjectCode, String isChecked) {

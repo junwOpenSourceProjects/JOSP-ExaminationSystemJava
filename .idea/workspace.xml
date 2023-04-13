@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="85b84b91-2d1b-4821-ab0b-02d70d8835b5" name="变更" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3fcbdd49-44aa-487c-ae13-af08a695514a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3fcbdd49-44aa-487c-ae13-af08a695514a.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/AcademySubjectListController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/AcademySubjectListDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/DTO/AcademySubjectListDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/StudentInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/wo1261931780/JOSPexaminationSystemJava/controller/StudentInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/wo1261931780/JOSPexaminationSystemJava/JospExaminationSystemJavaApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/wo1261931780/JOSPexaminationSystemJava/JospExaminationSystemJavaApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +134,7 @@
       <workItem from="1681292918015" duration="1097000" />
       <workItem from="1681301622978" duration="84000" />
       <workItem from="1681301747389" duration="12189000" />
-      <workItem from="1681351627584" duration="6220000" />
+      <workItem from="1681351627584" duration="8398000" />
     </task>
     <servers />
   </component>
@@ -146,12 +146,12 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/wo1261931780/JOSPexaminationSystemJava/JospExaminationSystemJavaApplicationTests.java</url>
-          <line>121</line>
+          <line>118</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/wo1261931780/JOSPexaminationSystemJava/JospExaminationSystemJavaApplicationTests.java</url>
-          <line>120</line>
+          <line>117</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
