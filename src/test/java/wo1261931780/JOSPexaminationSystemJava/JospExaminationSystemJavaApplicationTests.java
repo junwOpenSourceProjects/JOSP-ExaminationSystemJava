@@ -11,14 +11,18 @@ import wo1261931780.JOSPexaminationSystemJava.DTO.StudentListDTO;
 import wo1261931780.JOSPexaminationSystemJava.config.ShowResult;
 import wo1261931780.JOSPexaminationSystemJava.entity.AcademyLineInfo;
 import wo1261931780.JOSPexaminationSystemJava.entity.College;
+import wo1261931780.JOSPexaminationSystemJava.entity.ScoreBakcup;
 import wo1261931780.JOSPexaminationSystemJava.entity.ScoreInfo;
 import wo1261931780.JOSPexaminationSystemJava.entity.StudentInfo;
 import wo1261931780.JOSPexaminationSystemJava.service.AcademyLineInfoService;
 import wo1261931780.JOSPexaminationSystemJava.service.CollegeService;
+import wo1261931780.JOSPexaminationSystemJava.service.ScoreBakcupService;
 import wo1261931780.JOSPexaminationSystemJava.service.ScoreInfoService;
 import wo1261931780.JOSPexaminationSystemJava.service.StudentInfoService;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 
 @SpringBootTest
@@ -42,7 +46,7 @@ class JospExaminationSystemJavaApplicationTests {
 	private ScoreBakcupService scoreBakcupService;
 	
 	@Test
-	void showMeResult() {
+	void showMeMarxismResult() {
 		int page = 1;
 		int limit = 10;
 		// 返回的是dto
@@ -65,6 +69,9 @@ class JospExaminationSystemJavaApplicationTests {
 		// }
 		// 设置查询条件，查询所有马理论的研究生
 		lambdaQueryWrapper.eq(StudentInfo::getSubjectCode, "030500");
+		// TODO: 2023/4/13 查询马克思主义学院的所有考生
+		// lambdaQueryWrapper.eq(StudentInfo::getAcademyCode, "230");
+		lambdaQueryWrapper.like(StudentInfo::getRemark, "拟录取");// 只查询拟录取考生，这里最好使用前端传过来的sort
 		// todo 其实这里可以用in查询，添加一个mapper就可以了
 		
 		// 获取结果
@@ -81,7 +88,7 @@ class JospExaminationSystemJavaApplicationTests {
 			// 成绩表排名表返回各种数据
 			ScoreInfo scoreInfo = scoreInfoService.getById(studentCode);
 			BeanUtils.copyProperties(scoreInfo, studentListDTO);// 获取成绩数据，然后set进去
-			if (studentListDTO.getScoreTotal() == 0 || studentListDTO.getScoreTotal().equals("")) {
+			if (studentListDTO.getScoreTotal() == 0 || studentListDTO.getScoreTotal().equals("")) {// 使用hutu tool完成改造
 				ScoreBakcup scoreBakcup = scoreBakcupService.getById(studentCode);
 				BeanUtils.copyProperties(scoreBakcup, studentListDTO);// 拷贝不存在的复试成绩
 			}
@@ -98,10 +105,14 @@ class JospExaminationSystemJavaApplicationTests {
 			
 			// 获取院线表
 			// 返回学院名，专业代码和专业名
-			AcademyLineInfo academyLineInfo = academyLineInfoService.getById(studentListDTO.getSubjectCode());
-			BeanUtils.copyProperties(academyLineInfo, studentListDTO);
+			// todo 院线表为空，暂时没有数据
+			// AcademyLineInfo academyLineInfo = academyLineInfoService.getById(studentListDTO.getSubjectCode());
+			// BeanUtils.copyProperties(academyLineInfo, studentListDTO);
 			studentListDTOS.add(studentListDTO);// 新增进去
 		}
+		Arrays.sort(studentListDTOS.toArray());
+		// TODO: 2023/4/13 这里集合的排序需要去看提纲
+		studentListDTOS.sort(Comparator.comparingInt(StudentListDTO::getScoreTotalFirst));// 直接比较初试成绩
 		
 		// 合并为复试结果dto返回前端
 		studentListDTOPage.setRecords(studentListDTOS);

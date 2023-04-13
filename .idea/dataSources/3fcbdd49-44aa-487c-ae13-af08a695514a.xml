@@ -2827,17 +2827,17 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
     </column>
     <column id="650" parent="320" name="score_total_first">
       <Comment>初试总分</Comment>
-      <DasType>varchar(255)|0s</DasType>
+      <DasType>int|0s</DasType>
       <Position>2</Position>
     </column>
     <column id="651" parent="320" name="score_total_review">
       <Comment>复试总分</Comment>
-      <DasType>varchar(255)|0s</DasType>
+      <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
     <column id="652" parent="320" name="score_total">
       <Comment>最终成绩</Comment>
-      <DasType>varchar(255)|0s</DasType>
+      <DasType>int|0s</DasType>
       <Position>4</Position>
     </column>
     <index id="653" parent="320" name="PRIMARY">

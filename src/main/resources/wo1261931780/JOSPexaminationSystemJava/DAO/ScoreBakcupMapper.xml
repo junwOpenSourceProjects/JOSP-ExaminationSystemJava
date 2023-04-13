@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="wo1261931780.JOSPexaminationSystemJava.DAO.ScoreBakcupMapper">
+  <resultMap id="BaseResultMap" type="wo1261931780.JOSPexaminationSystemJava.entity.ScoreBakcup">
+    <!--@mbg.generated-->
+    <!--@Table score_bakcup-->
+    <id column="id" jdbcType="VARCHAR" property="id" />
+    <result column="score_total_first" jdbcType="INTEGER" property="scoreTotalFirst" />
+    <result column="score_total_review" jdbcType="INTEGER" property="scoreTotalReview" />
+    <result column="score_total" jdbcType="INTEGER" property="scoreTotal" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, score_total_first, score_total_review, score_total
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update score_bakcup
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="score_total_first = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotalFirst,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_total_review = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotalReview,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+      <trim prefix="score_total = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotal,jdbcType=INTEGER}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update score_bakcup
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="score_total_first = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreTotalFirst != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotalFirst,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_total_review = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreTotalReview != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotalReview,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="score_total = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.scoreTotal != null">
+            when id = #{item.id,jdbcType=VARCHAR} then #{item.scoreTotal,jdbcType=INTEGER}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+  <insert id="batchInsert" parameterType="map">
+    <!--@mbg.generated-->
+    insert into score_bakcup
+    (id, score_total_first, score_total_review, score_total)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.id,jdbcType=VARCHAR}, #{item.scoreTotalFirst,jdbcType=INTEGER}, #{item.scoreTotalReview,jdbcType=INTEGER}, 
+        #{item.scoreTotal,jdbcType=INTEGER})
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.ScoreBakcup">
+    <!--@mbg.generated-->
+    insert into score_bakcup
+    (id, score_total_first, score_total_review, score_total)
+    values
+    (#{id,jdbcType=VARCHAR}, #{scoreTotalFirst,jdbcType=INTEGER}, #{scoreTotalReview,jdbcType=INTEGER}, 
+      #{scoreTotal,jdbcType=INTEGER})
+    on duplicate key update 
+    id = #{id,jdbcType=VARCHAR}, 
+    score_total_first = #{scoreTotalFirst,jdbcType=INTEGER}, 
+    score_total_review = #{scoreTotalReview,jdbcType=INTEGER}, 
+    score_total = #{scoreTotal,jdbcType=INTEGER}
+  </insert>
+  <insert id="insertOrUpdateSelective" parameterType="wo1261931780.JOSPexaminationSystemJava.entity.ScoreBakcup">
+    <!--@mbg.generated-->
+    insert into score_bakcup
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="scoreTotalFirst != null">
+        score_total_first,
+      </if>
+      <if test="scoreTotalReview != null">
+        score_total_review,
+      </if>
+      <if test="scoreTotal != null">
+        score_total,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="scoreTotalFirst != null">
+        #{scoreTotalFirst,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotalReview != null">
+        #{scoreTotalReview,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotal != null">
+        #{scoreTotal,jdbcType=INTEGER},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="scoreTotalFirst != null">
+        score_total_first = #{scoreTotalFirst,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotalReview != null">
+        score_total_review = #{scoreTotalReview,jdbcType=INTEGER},
+      </if>
+      <if test="scoreTotal != null">
+        score_total = #{scoreTotal,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+</mapper>

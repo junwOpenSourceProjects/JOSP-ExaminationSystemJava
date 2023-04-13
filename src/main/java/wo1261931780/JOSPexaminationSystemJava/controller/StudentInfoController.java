@@ -16,11 +16,13 @@ import wo1261931780.JOSPexaminationSystemJava.entity.AcademyLineInfo;
 import wo1261931780.JOSPexaminationSystemJava.entity.College;
 import wo1261931780.JOSPexaminationSystemJava.entity.RankInfo;
 import wo1261931780.JOSPexaminationSystemJava.entity.ReviewList;
+import wo1261931780.JOSPexaminationSystemJava.entity.ScoreBakcup;
 import wo1261931780.JOSPexaminationSystemJava.entity.ScoreInfo;
 import wo1261931780.JOSPexaminationSystemJava.entity.StudentInfo;
 import wo1261931780.JOSPexaminationSystemJava.service.AcademyLineInfoService;
 import wo1261931780.JOSPexaminationSystemJava.service.CollegeService;
 import wo1261931780.JOSPexaminationSystemJava.service.RankInfoService;
+import wo1261931780.JOSPexaminationSystemJava.service.ScoreBakcupService;
 import wo1261931780.JOSPexaminationSystemJava.service.ScoreInfoService;
 import wo1261931780.JOSPexaminationSystemJava.service.StudentInfoService;
 
@@ -62,13 +64,15 @@ public class StudentInfoController {
 	@Autowired
 	private AcademyLineInfoService academyLineInfoService;
 	
+	@Autowired
+	private ScoreBakcupService scoreBakcupService;
+	
 	
 	@GetMapping("/list")
 	public ShowResult<Page<StudentListDTO>> showMeMaxismReviewListPage(@RequestParam Integer page
 			, @RequestParam Integer limit
 			, @RequestParam String sort
 			, String studentName, String subjectCode, String isChecked) {
-		// 返回的是dto
 		Page<StudentListDTO> studentListDTOPage = new Page<>();
 		studentListDTOPage.setCurrent(page);
 		studentListDTOPage.setSize(limit);
@@ -83,9 +87,9 @@ public class StudentInfoController {
 		studentInfoPage.setSize(limit);
 		
 		LambdaQueryWrapper<StudentInfo> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-		if (studentName != null && !studentName.equals("")) {
-			lambdaQueryWrapper.like(StudentInfo::getStudentName, studentName);
-		}
+		// if (studentName != null && !studentName.equals("")) {
+		// 	lambdaQueryWrapper.like(StudentInfo::getStudentName, studentName);
+		// }
 		// 设置查询条件，查询所有马理论的研究生
 		lambdaQueryWrapper.eq(StudentInfo::getSubjectCode, "030500");
 		// todo 其实这里可以用in查询，添加一个mapper就可以了
@@ -97,12 +101,18 @@ public class StudentInfoController {
 		for (StudentInfo studentInfo : studentInfoList) {
 			StudentListDTO studentListDTO = new StudentListDTO();
 			BeanUtils.copyProperties(studentInfo, studentListDTO);// 拷贝属性到新增的内部
+			studentListDTO.setStudentCode(studentInfo.getId());// 手动新增id进去
 			// 学生编号获取成功
 			String studentCode = studentListDTO.getStudentCode();
 			// id关联查询成绩表
 			// 成绩表排名表返回各种数据
 			ScoreInfo scoreInfo = scoreInfoService.getById(studentCode);
 			BeanUtils.copyProperties(scoreInfo, studentListDTO);// 获取成绩数据，然后set进去
+			if (studentListDTO.getScoreTotal() == 0 || studentListDTO.getScoreTotal().equals("")) {// 使用hutu tool完成改造
+				ScoreBakcup scoreBakcup = scoreBakcupService.getById(studentCode);
+				BeanUtils.copyProperties(scoreBakcup, studentListDTO);// 拷贝不存在的复试成绩
+			}
+			
 			// 获取排名数据
 			// RankInfo rankInfo = rankInfoService.getById(studentCode);
 			// BeanUtils.copyProperties(rankInfo, studentListDTO);
@@ -115,8 +125,9 @@ public class StudentInfoController {
 			
 			// 获取院线表
 			// 返回学院名，专业代码和专业名
-			AcademyLineInfo academyLineInfo = academyLineInfoService.getById(studentListDTO.getSubjectCode());
-			BeanUtils.copyProperties(academyLineInfo, studentListDTO);
+			// todo 院线表为空，暂时没有数据
+			// AcademyLineInfo academyLineInfo = academyLineInfoService.getById(studentListDTO.getSubjectCode());
+			// BeanUtils.copyProperties(academyLineInfo, studentListDTO);
 			studentListDTOS.add(studentListDTO);// 新增进去
 		}
 		
