@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="be4424e1-403e-447d-bdcc-b89d76b25089" name="更改" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/JOSP-ExaminationSystemJava.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/3fcbdd49-44aa-487c-ae13-af08a695514a.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/3fcbdd49-44aa-487c-ae13-af08a695514a.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="be4424e1-403e-447d-bdcc-b89d76b25089" name="更改" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,9 +13,16 @@
   <component name="CompilerWorkspaceConfiguration">
     <option name="MAKE_PROJECT_ON_SAVE" value="true" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="JRebelWorkspace">
     <option name="jrebelEnabledAutocompile" value="true" />
   </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2RtH3G9gIjjkJs6AhfhCefT7FpT" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -40,6 +42,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "40f13ff3598722e9aae330f6b3e432a5",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -67,6 +70,7 @@
       <option name="presentableId" value="Default" />
       <updated>1688058521286</updated>
       <workItem from="1688058524483" duration="3106000" />
+      <workItem from="1688062258072" duration="202000" />
     </task>
     <servers />
   </component>
