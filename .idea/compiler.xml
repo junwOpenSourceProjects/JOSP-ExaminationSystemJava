@@ -16,7 +16,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="JOSP-ExaminationSystemJava" options="-parameters" />
+      <module name="JOSP-ExaminationSystemJava" options="" />
       <module name="JOSP-SystemTempleJava" options="-parameters" />
     </option>
   </component>
