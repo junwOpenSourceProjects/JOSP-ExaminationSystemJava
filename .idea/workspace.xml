@@ -4,6 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
+<<<<<<< Updated upstream
     <list default="true" id="d3406a34-a9e8-4c17-9028-142d98e3876e" name="更改" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/JOSP-ExaminationSystemJava.iml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/MyBatisCodeHelperDatasource.xml" beforeDir="false" />
@@ -75,6 +76,9 @@
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/TEST-wo1261931780.JOSPexaminationSystemJava.JospExaminationSystemJavaApplicationTests.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/TEST-wo1261931780.JOSPexaminationSystemJava.JospExaminationSystemJavaApplicationTests.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/surefire-reports/wo1261931780.JOSPexaminationSystemJava.JospExaminationSystemJavaApplicationTests.txt" beforeDir="false" afterPath="$PROJECT_DIR$/target/surefire-reports/wo1261931780.JOSPexaminationSystemJava.JospExaminationSystemJavaApplicationTests.txt" afterDir="false" />
     </list>
+=======
+    <list default="true" id="be4424e1-403e-447d-bdcc-b89d76b25089" name="更改" comment="" />
+>>>>>>> Stashed changes
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -101,14 +105,26 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+<<<<<<< Updated upstream
+=======
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+>>>>>>> Stashed changes
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+<<<<<<< Updated upstream
+=======
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/64234/Documents/GitHub/JOSP-CIMSystemJava&quot;,
+>>>>>>> Stashed changes
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+<<<<<<< Updated upstream
     &quot;spring.configuration.checksum&quot;: &quot;40f13ff3598722e9aae330f6b3e432a5&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -116,6 +132,13 @@
     &quot;DatabaseDriversLRU&quot;: [
       &quot;mysql&quot;
     ]
+=======
+    &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;40f13ff3598722e9aae330f6b3e432a5&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+>>>>>>> Stashed changes
   }
 }</component>
   <component name="ReactorSettings">
@@ -137,10 +160,22 @@
       <created>1688111615061</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
+<<<<<<< Updated upstream
       <updated>1688111615061</updated>
       <workItem from="1688111617333" duration="675000" />
       <workItem from="1690186745703" duration="260000" />
       <workItem from="1690187024135" duration="62000" />
+=======
+      <updated>1688058521286</updated>
+      <workItem from="1688058524483" duration="3106000" />
+      <workItem from="1688062258072" duration="202000" />
+      <workItem from="1688106378586" duration="253000" />
+      <workItem from="1688194577398" duration="9000" />
+      <workItem from="1689996619886" duration="1202000" />
+      <workItem from="1690033489195" duration="14000" />
+      <workItem from="1690033835399" duration="1648000" />
+      <workItem from="1690079916473" duration="34000" />
+>>>>>>> Stashed changes
     </task>
     <servers />
   </component>
