@@ -3,6 +3,9 @@ package wo1261931780.JOSPexaminationSystemJava;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+/**
+ * @author junw
+ */
 @SpringBootApplication
 public class JospExaminationSystemJavaApplication {
 

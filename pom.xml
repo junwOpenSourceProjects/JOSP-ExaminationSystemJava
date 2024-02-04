@@ -83,6 +83,7 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+            <version>1.18.30</version>
             <optional>true</optional>
             <scope>provided</scope>
             <!--因为只是源代码中提供了对应的功能-->
@@ -241,11 +242,11 @@
             <!--一个是mybatis包-->
         </dependency>
         <!-- mybatis-plus 多数据源 -->
-        <dependency>
-            <groupId>com.baomidou</groupId>
-            <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-            <version>3.6.1</version>
-        </dependency>
+        <!--<dependency>-->
+        <!--    <groupId>com.baomidou</groupId>-->
+        <!--    <artifactId>dynamic-datasource-spring-boot-starter</artifactId>-->
+        <!--    <version>3.6.1</version>-->
+        <!--</dependency>-->
 
         <!--mybatis-plus的代码生成器-->
         <dependency>

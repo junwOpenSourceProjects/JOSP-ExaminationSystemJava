@@ -9,6 +9,9 @@ import lombok.NoArgsConstructor;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author junw
+ */
 @Data
 @ApiModel("返回结果")
 @AllArgsConstructor
