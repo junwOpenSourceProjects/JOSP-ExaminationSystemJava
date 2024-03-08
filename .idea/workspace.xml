@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="65354d9f-43e0-4adf-8d7c-91e778fa4be6" name="更改" comment="" />
+    <list default="true" id="65354d9f-43e0-4adf-8d7c-91e778fa4be6" name="更改" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,10 +34,17 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/junw/Documents/GitHub/JOSP-SystemTempleJava&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RebelAgentSelection">
+    <selection>jr</selection>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -54,6 +63,11 @@
       <updated>1707023677909</updated>
       <workItem from="1707023680862" duration="119000" />
       <workItem from="1707060995269" duration="30000" />
+      <workItem from="1707104482277" duration="827000" />
+      <workItem from="1707143199146" duration="615000" />
+      <workItem from="1707185005403" duration="66000" />
+      <workItem from="1707206824052" duration="234000" />
+      <workItem from="1707212967984" duration="85000" />
     </task>
     <servers />
   </component>
