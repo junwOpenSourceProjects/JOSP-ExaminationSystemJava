@@ -22,7 +22,7 @@ public interface AcademyGenerateScoreMapper extends BaseMapper<AcademyGenerateSc
 
     int batchInsert(@Param("list") List<AcademyGenerateScore> list);
 
-    int insertOrUpdate(AcademyGenerateScore record);
+    boolean insertOrUpdate(AcademyGenerateScore record);
 
     int insertOrUpdateSelective(AcademyGenerateScore record);
 }

@@ -51,8 +51,8 @@ public class AcademyLineController {
 		if (StrUtil.isEmptyIfStr(academyLine.getId())) {
 			academyLine.setId(UUID.randomUUID().toString());
 		}
-		int saveOrUpdate = academyLineService.insertOrUpdate(academyLine);
-		if (saveOrUpdate != 0) {
+		boolean saveOrUpdate = academyLineService.insertOrUpdate(academyLine);
+		if (saveOrUpdate ) {
 			return ShowResult.sendSuccess(academyLine);
 		} else {
 			return ShowResult.sendError("保存失败");

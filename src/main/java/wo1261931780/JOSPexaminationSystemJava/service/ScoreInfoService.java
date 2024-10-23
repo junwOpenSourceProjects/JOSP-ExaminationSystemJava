@@ -30,7 +30,7 @@ public class ScoreInfoService extends ServiceImpl<ScoreInfoMapper, ScoreInfo> {
         return baseMapper.batchInsert(list);
     }
     
-    public int insertOrUpdate(ScoreInfo record) {
+    public boolean insertOrUpdate(ScoreInfo record) {
         return baseMapper.insertOrUpdate(record);
     }
     

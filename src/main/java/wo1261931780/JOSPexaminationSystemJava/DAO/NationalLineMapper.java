@@ -22,7 +22,7 @@ public interface NationalLineMapper extends BaseMapper<NationalLine> {
 
     int batchInsert(@Param("list") List<NationalLine> list);
 
-    int insertOrUpdate(NationalLine record);
+    boolean insertOrUpdate(NationalLine record);
 
     int insertOrUpdateSelective(NationalLine record);
 }

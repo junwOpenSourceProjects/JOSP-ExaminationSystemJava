@@ -29,7 +29,7 @@ public class AcademyGenerateScoreService extends ServiceImpl<AcademyGenerateScor
         return baseMapper.batchInsert(list);
     }
     
-    public int insertOrUpdate(AcademyGenerateScore record) {
+    public boolean insertOrUpdate(AcademyGenerateScore record) {
         return baseMapper.insertOrUpdate(record);
     }
     

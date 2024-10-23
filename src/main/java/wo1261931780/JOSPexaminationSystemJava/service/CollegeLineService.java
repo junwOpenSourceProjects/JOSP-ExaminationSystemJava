@@ -29,7 +29,7 @@ public class CollegeLineService extends ServiceImpl<CollegeLineMapper, CollegeLi
         return baseMapper.batchInsert(list);
     }
     
-    public int insertOrUpdate(CollegeLine record) {
+    public boolean insertOrUpdate(CollegeLine record) {
         return baseMapper.insertOrUpdate(record);
     }
     

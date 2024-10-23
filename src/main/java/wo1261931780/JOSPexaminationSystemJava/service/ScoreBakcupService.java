@@ -30,7 +30,7 @@ public class ScoreBakcupService extends ServiceImpl<ScoreBakcupMapper, ScoreBakc
         return baseMapper.batchInsert(list);
     }
     
-    public int insertOrUpdate(ScoreBakcup record) {
+    public boolean insertOrUpdate(ScoreBakcup record) {
         return baseMapper.insertOrUpdate(record);
     }
     

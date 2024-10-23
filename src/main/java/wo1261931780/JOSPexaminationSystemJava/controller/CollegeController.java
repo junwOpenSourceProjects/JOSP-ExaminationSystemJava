@@ -46,8 +46,8 @@ public class CollegeController {
 	}
 	@PostMapping("/insertOrUpdate")
 	public ShowResult<College> insertOrUpdateCollege(College college) {
-		int saveOrUpdate = collegeService.insertOrUpdate(college);
-		if (saveOrUpdate!=0) {
+		boolean saveOrUpdate = collegeService.insertOrUpdate(college);
+		if (saveOrUpdate) {
 			return ShowResult.sendSuccess(college);
 		} else {
 			return ShowResult.sendError("保存失败");

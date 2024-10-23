@@ -30,7 +30,7 @@ public class AcademyLineInfoService extends ServiceImpl<AcademyLineInfoMapper, A
         return baseMapper.batchInsert(list);
     }
     
-    public int insertOrUpdate(AcademyLineInfo record) {
+    public boolean insertOrUpdate(AcademyLineInfo record) {
         return baseMapper.insertOrUpdate(record);
     }
     

@@ -22,7 +22,7 @@ public interface ScoreBakcupMapper extends BaseMapper<ScoreBakcup> {
 
     int batchInsert(@Param("list") List<ScoreBakcup> list);
 
-    int insertOrUpdate(ScoreBakcup record);
+    boolean insertOrUpdate(ScoreBakcup record);
 
     int insertOrUpdateSelective(ScoreBakcup record);
 }

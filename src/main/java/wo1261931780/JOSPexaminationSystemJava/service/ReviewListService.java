@@ -29,7 +29,7 @@ public class ReviewListService extends ServiceImpl<ReviewListMapper, ReviewList>
         return baseMapper.batchInsert(list);
     }
     
-    public int insertOrUpdate(ReviewList record) {
+    public boolean insertOrUpdate(ReviewList record) {
         return baseMapper.insertOrUpdate(record);
     }
     

@@ -53,8 +53,8 @@ public class CollegeLineController {
 	
 	@PostMapping("/insertOrUpdate")
 	public ShowResult<CollegeLine> insertOrUpdateCollegeLineService(CollegeLine collegeLine) {
-		int saveOrUpdate = collegeLineService.insertOrUpdate(collegeLine);
-		if (saveOrUpdate != 0) {
+		boolean saveOrUpdate = collegeLineService.insertOrUpdate(collegeLine);
+		if (saveOrUpdate) {
 			return ShowResult.sendSuccess(collegeLine);
 		} else {
 			return ShowResult.sendError("保存失败");

@@ -29,7 +29,7 @@ public class ComplexTableService extends ServiceImpl<ComplexTableMapper, Complex
         return baseMapper.batchInsert(list);
     }
     
-    public int insertOrUpdate(ComplexTable record) {
+    public boolean insertOrUpdate(ComplexTable record) {
         return baseMapper.insertOrUpdate(record);
     }
     

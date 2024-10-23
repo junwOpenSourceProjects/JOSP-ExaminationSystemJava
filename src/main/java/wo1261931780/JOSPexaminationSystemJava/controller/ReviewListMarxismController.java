@@ -93,8 +93,8 @@ public class ReviewListMarxismController {
 	
 	@PostMapping("/insertOrUpdate")
 	public ShowResult<ReviewList> insertOrUpdateMaxismReviewList(ReviewList reviewList) {
-		int saveOrUpdate = reviewListService.insertOrUpdate(reviewList);
-		if (saveOrUpdate != 0) {
+		boolean saveOrUpdate = reviewListService.insertOrUpdate(reviewList);
+		if (saveOrUpdate) {
 			return ShowResult.sendSuccess(reviewList);
 		} else {
 			return ShowResult.sendError("保存失败");

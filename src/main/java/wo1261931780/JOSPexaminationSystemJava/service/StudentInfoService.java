@@ -30,7 +30,7 @@ public class StudentInfoService extends ServiceImpl<StudentInfoMapper, StudentIn
         return baseMapper.batchInsert(list);
     }
     
-    public int insertOrUpdate(StudentInfo record) {
+    public boolean insertOrUpdate(StudentInfo record) {
         return baseMapper.insertOrUpdate(record);
     }
     

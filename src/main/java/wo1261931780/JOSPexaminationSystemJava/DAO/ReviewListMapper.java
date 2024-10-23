@@ -22,7 +22,7 @@ public interface ReviewListMapper extends BaseMapper<ReviewList> {
 
     int batchInsert(@Param("list") List<ReviewList> list);
 
-    int insertOrUpdate(ReviewList record);
+    boolean insertOrUpdate(ReviewList record);
 
     int insertOrUpdateSelective(ReviewList record);
 }

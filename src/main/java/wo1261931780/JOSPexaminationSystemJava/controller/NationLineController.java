@@ -53,8 +53,8 @@ public class NationLineController {
 	
 	@PostMapping("/insertOrUpdate")
 	public ShowResult<NationalLine> insertOrUpdateAllNationalLine(NationalLine nationalLine) {
-		int saveOrUpdate = nationalLineService.insertOrUpdate(nationalLine);
-		if (saveOrUpdate != 0) {
+		boolean saveOrUpdate = nationalLineService.insertOrUpdate(nationalLine);
+		if (saveOrUpdate) {
 			return ShowResult.sendSuccess(nationalLine);
 		} else {
 			return ShowResult.sendError("保存失败");

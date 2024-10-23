@@ -22,7 +22,7 @@ public interface CollegeMapper extends BaseMapper<College> {
 
     int batchInsert(@Param("list") List<College> list);
 
-    int insertOrUpdate(College record);
+    boolean insertOrUpdate(College record);
 
     int insertOrUpdateSelective(College record);
 }

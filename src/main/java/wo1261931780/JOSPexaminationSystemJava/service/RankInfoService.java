@@ -30,7 +30,7 @@ public class RankInfoService extends ServiceImpl<RankInfoMapper, RankInfo> {
         return baseMapper.batchInsert(list);
     }
     
-    public int insertOrUpdate(RankInfo record) {
+    public boolean insertOrUpdate(RankInfo record) {
         return baseMapper.insertOrUpdate(record);
     }
     

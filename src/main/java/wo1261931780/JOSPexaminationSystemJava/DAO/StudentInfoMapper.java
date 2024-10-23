@@ -22,7 +22,7 @@ public interface StudentInfoMapper extends BaseMapper<StudentInfo> {
 
     int batchInsert(@Param("list") List<StudentInfo> list);
 
-    int insertOrUpdate(StudentInfo record);
+    boolean insertOrUpdate(StudentInfo record);
 
     int insertOrUpdateSelective(StudentInfo record);
 }

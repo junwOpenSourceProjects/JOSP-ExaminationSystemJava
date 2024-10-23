@@ -22,7 +22,7 @@ public interface RankInfoMapper extends BaseMapper<RankInfo> {
 
     int batchInsert(@Param("list") List<RankInfo> list);
 
-    int insertOrUpdate(RankInfo record);
+    boolean insertOrUpdate(RankInfo record);
 
     int insertOrUpdateSelective(RankInfo record);
 }

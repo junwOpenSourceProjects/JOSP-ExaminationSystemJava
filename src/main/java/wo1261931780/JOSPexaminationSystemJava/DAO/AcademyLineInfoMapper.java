@@ -22,7 +22,7 @@ public interface AcademyLineInfoMapper extends BaseMapper<AcademyLineInfo> {
 
     int batchInsert(@Param("list") List<AcademyLineInfo> list);
 
-    int insertOrUpdate(AcademyLineInfo record);
+    boolean insertOrUpdate(AcademyLineInfo record);
 
     int insertOrUpdateSelective(AcademyLineInfo record);
 }

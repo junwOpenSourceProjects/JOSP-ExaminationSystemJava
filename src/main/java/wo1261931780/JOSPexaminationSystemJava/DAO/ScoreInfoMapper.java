@@ -22,7 +22,7 @@ public interface ScoreInfoMapper extends BaseMapper<ScoreInfo> {
 
     int batchInsert(@Param("list") List<ScoreInfo> list);
 
-    int insertOrUpdate(ScoreInfo record);
+    boolean insertOrUpdate(ScoreInfo record);
 
     int insertOrUpdateSelective(ScoreInfo record);
 }

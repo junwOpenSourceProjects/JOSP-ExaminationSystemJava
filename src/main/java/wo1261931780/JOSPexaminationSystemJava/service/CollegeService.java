@@ -29,7 +29,7 @@ public class CollegeService extends ServiceImpl<CollegeMapper, College> {
         return baseMapper.batchInsert(list);
     }
     
-    public int insertOrUpdate(College record) {
+    public boolean insertOrUpdate(College record) {
         return baseMapper.insertOrUpdate(record);
     }
     

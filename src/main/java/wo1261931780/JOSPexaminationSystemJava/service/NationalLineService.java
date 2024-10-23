@@ -30,7 +30,7 @@ public class NationalLineService extends ServiceImpl<NationalLineMapper, Nationa
         return baseMapper.batchInsert(list);
     }
     
-    public int insertOrUpdate(NationalLine record) {
+    public boolean insertOrUpdate(NationalLine record) {
         return baseMapper.insertOrUpdate(record);
     }
     

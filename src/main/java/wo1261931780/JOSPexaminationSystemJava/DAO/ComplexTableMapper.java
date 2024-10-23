@@ -22,7 +22,7 @@ public interface ComplexTableMapper extends BaseMapper<ComplexTable> {
 
     int batchInsert(@Param("list") List<ComplexTable> list);
 
-    int insertOrUpdate(ComplexTable record);
+    boolean insertOrUpdate(ComplexTable record);
 
     int insertOrUpdateSelective(ComplexTable record);
 }

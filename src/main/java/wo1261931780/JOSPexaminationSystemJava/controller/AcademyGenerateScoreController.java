@@ -44,8 +44,8 @@ public class AcademyGenerateScoreController {
 	}
 	@PostMapping("/insertOrUpdate")
 	public ShowResult<AcademyGenerateScore> insertOrUpdateAcademyGenerateScore(AcademyGenerateScore academyGenerateScore) {
-		int saveOrUpdate = academyGenerateScoreService.insertOrUpdate(academyGenerateScore);
-		if (saveOrUpdate!=0) {
+		boolean saveOrUpdate = academyGenerateScoreService.insertOrUpdate(academyGenerateScore);
+		if (saveOrUpdate) {
 			return ShowResult.sendSuccess(academyGenerateScore);
 		} else {
 			return ShowResult.sendError("保存失败");
