@@ -4,8 +4,6 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.io.Serializable;
@@ -28,8 +26,7 @@ import lombok.NoArgsConstructor;
 /**
  * 开源分数查询系统-专业均分表
  */
-@ApiModel(description = "开源分数查询系统-专业均分表")
-@Schema(description = "开源分数查询系统-专业均分表")
+	@Schema(description = "开源分数查询系统-专业均分表")
 @Data
 @Builder
 @AllArgsConstructor
@@ -37,18 +34,16 @@ import lombok.NoArgsConstructor;
 @TableName(value = "academy_score_info")
 public class AcademyScoreInfo implements Serializable {
 	/**
-	 * 主键，专业代码
+	 * 主键,专业代码
 	 */
 	@TableId(value = "id", type = IdType.AUTO)
-	@ApiModelProperty(value = "主键，专业代码")
-	@Schema(description = "主键，专业代码")
+	@Schema(description = "主键,专业代码")
 	private String id;
 	
 	/**
 	 * 学院代码
 	 */
 	@TableField(value = "academy_code")
-	@ApiModelProperty(value = "学院代码")
 	@Schema(description = "学院代码")
 	private String academyCode;
 	
@@ -56,7 +51,6 @@ public class AcademyScoreInfo implements Serializable {
 	 * 学院名称
 	 */
 	@TableField(value = "academy_name")
-	@ApiModelProperty(value = "学院名称")
 	@Schema(description = "学院名称")
 	private String academyName;
 	
@@ -64,7 +58,6 @@ public class AcademyScoreInfo implements Serializable {
 	 * 政治均分
 	 */
 	@TableField(value = "average_polite")
-	@ApiModelProperty(value = "政治均分")
 	@Schema(description = "政治均分")
 	private Integer averagePolite;
 	
@@ -72,7 +65,6 @@ public class AcademyScoreInfo implements Serializable {
 	 * 英语均分
 	 */
 	@TableField(value = "average_english")
-	@ApiModelProperty(value = "英语均分")
 	@Schema(description = "英语均分")
 	private Integer averageEnglish;
 	
@@ -80,7 +72,6 @@ public class AcademyScoreInfo implements Serializable {
 	 * 专业课一均分
 	 */
 	@TableField(value = "average_professional_1")
-	@ApiModelProperty(value = "专业课一均分")
 	@Schema(description = "专业课一均分")
 	private Integer averageProfessional1;
 	
@@ -88,7 +79,6 @@ public class AcademyScoreInfo implements Serializable {
 	 * 专业课二均分
 	 */
 	@TableField(value = "average_professional_2")
-	@ApiModelProperty(value = "专业课二均分")
 	@Schema(description = "专业课二均分")
 	private Integer averageProfessional2;
 	
@@ -96,7 +86,6 @@ public class AcademyScoreInfo implements Serializable {
 	 * 初试均分
 	 */
 	@TableField(value = "average_total_first")
-	@ApiModelProperty(value = "初试均分")
 	@Schema(description = "初试均分")
 	private Integer averageTotalFirst;
 	
@@ -104,7 +93,6 @@ public class AcademyScoreInfo implements Serializable {
 	 * 复试均分
 	 */
 	@TableField(value = "average_total_review")
-	@ApiModelProperty(value = "复试均分")
 	@Schema(description = "复试均分")
 	private Integer averageTotalReview;
 	
@@ -112,7 +100,6 @@ public class AcademyScoreInfo implements Serializable {
 	 * 总分均分
 	 */
 	@TableField(value = "average_total")
-	@ApiModelProperty(value = "总分均分")
 	@Schema(description = "总分均分")
 	private Integer averageTotal;
 	
@@ -120,7 +107,6 @@ public class AcademyScoreInfo implements Serializable {
 	 * 公共课均分
 	 */
 	@TableField(value = "average_total_public")
-	@ApiModelProperty(value = "公共课均分")
 	@Schema(description = "公共课均分")
 	private Integer averageTotalPublic;
 	
@@ -128,7 +114,6 @@ public class AcademyScoreInfo implements Serializable {
 	 * 专业课均分
 	 */
 	@TableField(value = "average_total_professional")
-	@ApiModelProperty(value = "专业课均分")
 	@Schema(description = "专业课均分")
 	private Integer averageTotalProfessional;
 	

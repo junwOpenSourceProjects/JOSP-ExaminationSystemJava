@@ -4,8 +4,6 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiModelProperty;
 import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.io.Serializable;
@@ -28,8 +26,7 @@ import lombok.NoArgsConstructor;
 /**
  * 开源分数查询系统-学生信息表
  */
-@ApiModel(description = "开源分数查询系统-学生信息表")
-@Schema(description = "开源分数查询系统-学生信息表")
+	@Schema(description = "开源分数查询系统-学生信息表")
 @Data
 @Builder
 @AllArgsConstructor
@@ -40,7 +37,6 @@ public class StudentInfo implements Serializable {
 	 * 主键，学生编号
 	 */
 	@TableId(value = "id", type = IdType.AUTO)
-	@ApiModelProperty(value = "主键，学生编号")
 	@Schema(description = "主键，学生编号")
 	private String id;
 	
@@ -48,7 +44,6 @@ public class StudentInfo implements Serializable {
 	 * 学生姓名
 	 */
 	@TableField(value = "student_name")
-	@ApiModelProperty(value = "学生姓名")
 	@Schema(description = "学生姓名")
 	private String studentName;
 	
@@ -56,7 +51,6 @@ public class StudentInfo implements Serializable {
 	 * 学科代码
 	 */
 	@TableField(value = "subject_code")
-	@ApiModelProperty(value = "学科代码")
 	@Schema(description = "学科代码")
 	private String subjectCode;
 	
@@ -64,7 +58,6 @@ public class StudentInfo implements Serializable {
 	 * 学院代码
 	 */
 	@TableField(value = "academy_code")
-	@ApiModelProperty(value = "学院代码")
 	@Schema(description = "学院代码")
 	private String academyCode;
 	
@@ -72,7 +65,6 @@ public class StudentInfo implements Serializable {
 	 * 录取状态
 	 */
 	@TableField(value = "remark")
-	@ApiModelProperty(value = "录取状态")
 	@Schema(description = "录取状态")
 	private String remark;
 	
@@ -80,7 +72,6 @@ public class StudentInfo implements Serializable {
 	 * 专项计划
 	 */
 	@TableField(value = "projects")
-	@ApiModelProperty(value = "专项计划")
 	@Schema(description = "专项计划")
 	private String projects;
 	
@@ -88,7 +79,6 @@ public class StudentInfo implements Serializable {
 	 * 其它信息
 	 */
 	@TableField(value = "other_remark")
-	@ApiModelProperty(value = "其它信息")
 	@Schema(description = "其它信息")
 	private String otherRemark;
 	
@@ -96,7 +86,6 @@ public class StudentInfo implements Serializable {
 	 * 研究方向
 	 */
 	@TableField(value = "study_forward")
-	@ApiModelProperty(value = "研究方向")
 	@Schema(description = "研究方向")
 	private String studyForward;
 	
