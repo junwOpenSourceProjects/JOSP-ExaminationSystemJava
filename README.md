@@ -145,11 +145,33 @@ JOSP-ExaminationSystemJava/
 └── pom.xml                      # Maven依赖配置
 ```
 
-## 🔌 API文档
+## 💡 核心功能
 
-启动项目后访问 Knife4j 接口文档:
-- 地址: http://localhost:8088/doc.html
-- 功能: 在线接口测试、API文档查看
+### 成绩查询模块
+- **学生信息查询** - 支持分页查询学生基本信息
+- **成绩数据展示** - 展示初试成绩、复试成绩、总分等
+- **排名查询** - 提供成绩排名和录取情况查询
+
+### 分数线管理
+- **国家线查询** - 国家线分数数据展示
+- **院线查询** - 各学院复试分数线查询
+- **专业分数线** - 各专业方向分数线管理
+
+### 数据分析
+- **学院数据** - 学院信息管理和统计
+- **专业数据** - 专业代码和专业名称映射
+- **复试名单** - 自动生成复试名单(如马理论专业)
+
+### 数据库表结构
+项目包含以下核心数据表:
+- `student_info` - 学生基本信息表
+- `score_info` - 成绩信息表
+- `score_backup` - 复试成绩备份表
+- `rank_info` - 排名信息表
+- `college` - 学院信息表
+- `academy_line_info` - 院线信息表
+- `nation_line` - 国家线信息表
+- `review_list` - 复试名单表
 
 ## 🔧 开发指南
 
@@ -181,7 +203,7 @@ mvn mybatis-plus:generate
 
 ## 📄 许可证
 
-本项目采用 MIT 许可证 - 查看 [LICENSE](LICENSE) 文件了解详情
+本项目采用 GNU Affero General Public License v3.0 协议 - 查看 [LICENSE](LICENSE) 文件了解详情
 
 ## 📮 联系方式
 
