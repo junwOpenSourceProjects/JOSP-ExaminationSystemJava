@@ -68,6 +68,12 @@ replay_pid*
 # Maven wrapper
 !.mvn/wrapper/maven-wrapper.jar
 
+# Compiled class files
+*.class
+
+# Maven local repository
+.m2/
+
 # Application
 application-local.yml
 application-dev.yml
