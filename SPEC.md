@@ -148,7 +148,143 @@ JOSP-ExaminationSystemJava/
 
 ---
 
-## 4. 数据库表
+## 4. 架构设计
+
+### 4.1 系统架构图
+
+```mermaid
+graph TB
+    subgraph Frontend["前端层"]
+        Vue3["Vue3 + ElementPlus<br/>JOSP-ExaminationSystemVue3"]
+    end
+
+    subgraph Gateway["网关层"]
+        Cors["CORS Config<br/>跨域配置"]
+        OpenApi["OpenApi Config<br/>Knife4j API文档"]
+    end
+
+    subgraph Application["应用层"]
+        Login["LoginController<br/>登录认证"]
+        Student["StudentInfoController<br/>学生信息"]
+        Score["ScoreInfoController<br/>成绩管理"]
+        Academy["AcademyLineController<br/>院校分数线"]
+        Nation["NationLineController<br/>国家线"]
+        Review["ReviewListController<br/>审核管理"]
+    end
+
+    subgraph Service["服务层"]
+        LoginUserService["LoginUserService"]
+        StudentInfoService["StudentInfoService"]
+        ScoreInfoService["ScoreInfoService"]
+        AcademyLineService["AcademyLineService"]
+        NationalLineService["NationalLineService"]
+    end
+
+    subgraph Data["数据层"]
+        MyBatisPlus["MyBatis-Plus 3.5.16"]
+        MySQL["MySQL 8.0+"]
+        Fastjson2["Fastjson2 2.0.61"]
+    end
+
+    Frontend --> Cors
+    Cors --> Login
+    Cors --> Student
+    Cors --> Score
+    Cors --> Academy
+    Cors --> Nation
+    Cors --> Review
+    Login --> LoginUserService
+    Student --> StudentInfoService
+    Score --> ScoreInfoService
+    Academy --> AcademyLineService
+    Nation --> NationalLineService
+    LoginUserService --> MyBatisPlus
+    StudentInfoService --> MyBatisPlus
+    ScoreInfoService --> MyBatisPlus
+    AcademyLineService --> MyBatisPlus
+    NationalLineService --> MyBatisPlus
+    MyBatisPlus --> MySQL
+```
+
+### 4.2 请求处理流程
+
+```mermaid
+sequenceDiagram
+    participant Client as 前端 Client
+    participant Cors as CORS Filter
+    participant Controller as Controller
+    participant Service as Service
+    participant Mapper as Mapper
+    participant DB as MySQL
+
+    Client->>Cors: HTTP Request
+    Cors->>Controller: 路由分发
+    Controller->>Service: 业务逻辑调用
+    Service->>Mapper: 数据访问
+    Mapper->>DB: SQL 执行
+    DB-->>Mapper: 查询结果
+    Mapper-->>Service: Entity
+    Service-->>Controller: Unified Response
+    Controller-->>Client: JSON Response
+```
+
+### 4.3 数据库 ER 图（核心实体）
+
+```mermaid
+erDiagram
+    LOGIN_USER ||--o{ ACCOUNT_ROLE : "拥有"
+    STUDENT_INFO ||--o{ SCORE_INFO : "拥有成绩"
+    ACADEMY_LINE ||--o{ ACADEMY_LINE_INFO : "包含单科线"
+    COLLEGE ||--o{ COLLEGE_LINE : "拥有分数线"
+
+    LOGIN_USER {
+        bigint id PK "主键"
+        varchar username "用户名"
+        varchar password "密码"
+        datetime create_time "创建时间"
+    }
+
+    ACCOUNT_ROLE {
+        bigint id PK "主键"
+        bigint user_id FK "用户ID"
+        varchar role "角色"
+    }
+
+    STUDENT_INFO {
+        bigint id PK "主键"
+        varchar name "姓名"
+        varchar student_no "学号"
+        int total_score "总分"
+        datetime create_time "创建时间"
+    }
+
+    SCORE_INFO {
+        bigint id PK "主键"
+        bigint student_id FK "学生ID"
+        varchar subject "科目"
+        int score "分数"
+    }
+
+    ACADEMY_LINE {
+        bigint id PK "主键"
+        varchar academy_name "院校名称"
+        int min_score "最低分"
+        int avg_score "平均分"
+    }
+
+    NATIONAL_LINE {
+        bigint id PK "主键"
+        varchar category "类别"
+        int politics "政治分数线"
+        int english "英语分数线"
+        int subject1 "专业课1"
+        int subject2 "专业课2"
+    }
+```
+
+---
+
+## 5. 数据库表
 
 系统涉及以下主要数据表：
 
@@ -172,7 +308,7 @@ JOSP-ExaminationSystemJava/
 
 ---
 
-## 5. API 文档
+## 6. API 文档
 
 启动服务后，访问 Knife4j API 文档：
 - URL: `http://localhost:端口/swagger-ui/index.html`
@@ -180,9 +316,9 @@ JOSP-ExaminationSystemJava/
 
 ---
 
-## 6. 配置说明
+## 7. 配置说明
 
-### 6.1 数据库配置
+### 7.1 数据库配置
 
 在 `application.yml` 中配置数据库连接：
 
@@ -195,7 +331,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
 ```
 
-### 6.2 MyBatis-Plus 配置
+### 7.2 MyBatis-Plus 配置
 
 ```yaml
 mybatis-plus:
@@ -207,7 +343,7 @@ mybatis-plus:
 
 ---
 
-## 7. 环境要求
+## 8. 环境要求
 
 | 环境 | 版本要求 |
 |------|----------|
@@ -218,7 +354,7 @@ mybatis-plus:
 
 ---
 
-## 8. 许可证
+## 9. 许可证
 
 本项目采用 AGPL-3.0 开源许可证。
 
@@ -226,7 +362,7 @@ mybatis-plus:
 
 ---
 
-## 9. 变更日志
+## 10. 变更日志
 
 ### v0.0.1-SNAPSHOT
 - 初始版本
