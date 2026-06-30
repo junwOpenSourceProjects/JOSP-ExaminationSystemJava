@@ -37,7 +37,7 @@ public class ReviewListAllController {
 		pageInfo.setSize(limit);// 每页条数
 		LambdaQueryWrapper<ReviewList> lambdaQueryWrapper = new LambdaQueryWrapper<>();
 		lambdaQueryWrapper.like(studentName != null, ReviewList::getStudentName, studentName);
-		lambdaQueryWrapper.like(ReviewList::getSubjectCode, subjectCode);// 没有设置专业的时候查询所有
+		lambdaQueryWrapper.like(subjectCode != null, ReviewList::getSubjectCode, subjectCode);// 没有设置专业的时候查询所有
 		if ("0".equals(sort)) {
 			lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
 		} else {

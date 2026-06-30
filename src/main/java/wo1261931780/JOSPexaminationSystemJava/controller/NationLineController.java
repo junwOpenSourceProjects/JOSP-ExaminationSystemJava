@@ -39,8 +39,8 @@ public class NationLineController {
 		pageInfo.setSize(limit);// 每页条数
 		LambdaQueryWrapper<NationalLine> lambdaQueryWrapper = new LambdaQueryWrapper<>();
 		lambdaQueryWrapper.like(studentName != null, NationalLine::getSubjectClass, studentName);
-		lambdaQueryWrapper.like(NationalLine::getStudentClass, studentClass);
-		lambdaQueryWrapper.like(NationalLine::getDegreeType, degreeType);
+		lambdaQueryWrapper.like(studentClass != null, NationalLine::getStudentClass, studentClass);
+		lambdaQueryWrapper.like(degreeType != null, NationalLine::getDegreeType, degreeType);
 		if ("0".equals(sort)) {
 			lambdaQueryWrapper.orderByAsc(NationalLine::getDegreeType).orderByDesc(NationalLine::getScoreTotal);
 		} else {

@@ -40,7 +40,7 @@ public class CollegeController {
 		pageInfo.setCurrent(page);// 当前页
 		pageInfo.setSize(limit);// 每页条数
 		LambdaQueryWrapper<College> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-		lambdaQueryWrapper.like(College::getAcademyName, academyName);
+		lambdaQueryWrapper.like(academyName != null, College::getAcademyName, academyName);
 		Page<College> testPage = collegeService.page(pageInfo, lambdaQueryWrapper);
 		return ShowResult.sendSuccess(testPage);
 	}
