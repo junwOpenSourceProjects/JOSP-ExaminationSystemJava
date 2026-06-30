@@ -43,6 +43,7 @@ public class LoginController {
 		if (userServiceOne == null) {
 			return ShowResult.sendError("账号或密码错误");
 		}
+		userServiceOne.setPassword(null);
 		return ShowResult.sendSuccess(userServiceOne);
 	}
 
