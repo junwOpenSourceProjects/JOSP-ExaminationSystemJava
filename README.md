@@ -21,6 +21,7 @@ graph TB
     subgraph Gateway["网关层"]
         Cors["CORS Config<br/>跨域配置"]
         OpenApi["OpenApi Config<br/>Knife4j API文档"]
+        GlobalException["GlobalExceptionHandler<br/>全局异常处理"]
     end
 
     subgraph Application["应用层 Controller"]
