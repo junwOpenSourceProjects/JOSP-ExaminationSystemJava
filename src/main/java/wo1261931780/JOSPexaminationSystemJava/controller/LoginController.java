@@ -1,6 +1,5 @@
 package wo1261931780.JOSPexaminationSystemJava.controller;
 
-import cn.hutool.core.text.CharSequenceUtil;
 import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +16,6 @@ import wo1261931780.JOSPexaminationSystemJava.service.LoginUserService;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 /**
  * Created by Intellij IDEA.
@@ -36,37 +34,20 @@ public class LoginController {
 	//http://localhost:8081/vue-element-admin/user/login
 	@PostMapping("/login")
 	public ShowResult<LoginUser> userLogin(@RequestBody LoginUser loginUser) {
-		// 判断
-		if (loginUser != null) {
-			// 查询
-			//LoginUser byId = loginUserService.getById(loginUser.getId());
-			//if (StrUtil.isEmptyIfStr(byId)) {
-			//	return ShowResult.sendError("用户不存在");
-			//}
-			LambdaQueryWrapper<LoginUser> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-			//这里密码有一个加密的过程
-			String passwordMd5DigestAsHex = DigestUtils.md5DigestAsHex(loginUser.getPassword().getBytes());
-			// 查询账号密码是否正确
-			lambdaQueryWrapper.eq(LoginUser::getUsername, loginUser.getUsername())
-					.eq(LoginUser::getPassword, passwordMd5DigestAsHex);
-			LoginUser userServiceOne = loginUserService.getOne(lambdaQueryWrapper);
-			if (StrUtil.isEmptyIfStr(userServiceOne)) {
-				return ShowResult.sendError("账号或密码错误");
-			}
-			return ShowResult.sendSuccess(userServiceOne);
+		if (loginUser == null || StrUtil.isBlank(loginUser.getUsername()) || StrUtil.isBlank(loginUser.getPassword())) {
+			return ShowResult.sendError("用户名或密码不能为空");
 		}
-		
-		// 没有id就执行注册流程
-		//if (CharSequenceUtil.isNotEmpty(loginUser.getUsername()) && CharSequenceUtil.isNotEmpty(loginUser.getPassword())) {
-		//	loginUser.setId(Long.valueOf(UUID.randomUUID().toString()));// 随机一个id
-		//	//新增这里有问题，因为id是long类型，而UUID是String类型，所以会报错
-		//	loginUser.setPassword(DigestUtils.md5DigestAsHex(loginUser.getPassword().getBytes()));// 密码通过MD5加密，然后保存回去
-		//	loginUserService.insertOrUpdate(loginUser);// 插入一条数据
-		//	return ShowResult.sendSuccess(loginUser);
-		//}
-		return ShowResult.sendError("登录失败");
+		LambdaQueryWrapper<LoginUser> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+		String passwordMd5DigestAsHex = DigestUtils.md5DigestAsHex(loginUser.getPassword().getBytes());
+		lambdaQueryWrapper.eq(LoginUser::getUsername, loginUser.getUsername())
+				.eq(LoginUser::getPassword, passwordMd5DigestAsHex);
+		LoginUser userServiceOne = loginUserService.getOne(lambdaQueryWrapper);
+		if (userServiceOne == null) {
+			return ShowResult.sendError("账号或密码错误");
+		}
+		return ShowResult.sendSuccess(userServiceOne);
 	}
-	
+
 	/**
 	 * 获取用户信息，暂时写死
 	 * @return 用户信息
