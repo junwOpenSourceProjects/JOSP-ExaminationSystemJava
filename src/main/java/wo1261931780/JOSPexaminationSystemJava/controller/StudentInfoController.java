@@ -40,7 +40,7 @@ import java.util.stream.Collectors;
  * @description
  */
 @RestController
-@RequestMapping("/StudentInfo")
+@RequestMapping("/student")
 public class StudentInfoController {
 	// todo 封装echarts数据结构
 	// echarts数据视图统一返回到response中

@@ -24,7 +24,7 @@ import wo1261931780.JOSPexaminationSystemJava.service.NationalLineService;
  * @description
  */
 @RestController
-@RequestMapping("/AcademyGenerateScore")
+@RequestMapping("/academy/score/generate")
 public class AcademyGenerateScoreController {
 	@Autowired
 	private AcademyGenerateScoreService academyGenerateScoreService;

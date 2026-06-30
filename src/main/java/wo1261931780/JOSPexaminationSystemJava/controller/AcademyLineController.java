@@ -27,7 +27,7 @@ import java.util.UUID;
  * @description
  */
 @RestController
-@RequestMapping("/AcademyLine")
+@RequestMapping("/academy/line")
 public class AcademyLineController {
 	@Autowired
 	private AcademyLineService academyLineService;

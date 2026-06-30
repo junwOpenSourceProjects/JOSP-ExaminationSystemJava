@@ -24,7 +24,7 @@ import wo1261931780.JOSPexaminationSystemJava.service.ReviewListService;
  * @description
  */
 @RestController
-@RequestMapping("/NationLine")
+@RequestMapping("/national/line")
 public class NationLineController {
 	@Autowired
 	private NationalLineService nationalLineService;

@@ -23,7 +23,7 @@ import wo1261931780.JOSPexaminationSystemJava.service.ReviewListService;
  * @description
  */
 @RestController
-@RequestMapping("/ReviewListMarxism")
+@RequestMapping("/review/list/marxism")
 public class ReviewListMarxismController {
 	// 查询学生表
 	// id关联查询成绩表，排名表，学院表，院线表

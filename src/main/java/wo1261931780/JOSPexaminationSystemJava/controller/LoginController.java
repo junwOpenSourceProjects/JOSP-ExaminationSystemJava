@@ -26,12 +26,10 @@ import java.util.List;
  * @Date 2023-03-20-08  星期四
  * @description
  */
-@RequestMapping("/vue-element-admin/user")
 @RestController
 public class LoginController {
 	@Autowired
 	private LoginUserService loginUserService;
-	//http://localhost:8081/vue-element-admin/user/login
 	@PostMapping("/login")
 	public ShowResult<LoginUser> userLogin(@RequestBody LoginUser loginUser) {
 		if (loginUser == null || StrUtil.isBlank(loginUser.getUsername()) || StrUtil.isBlank(loginUser.getPassword())) {

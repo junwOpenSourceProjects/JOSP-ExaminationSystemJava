@@ -25,7 +25,7 @@ import wo1261931780.JOSPexaminationSystemJava.service.NationalLineService;
  * @description
  */
 @RestController
-@RequestMapping("/CollegeLine")
+@RequestMapping("/college/line")
 public class CollegeLineController {
 	@Autowired
 	private CollegeLineService collegeLineService;

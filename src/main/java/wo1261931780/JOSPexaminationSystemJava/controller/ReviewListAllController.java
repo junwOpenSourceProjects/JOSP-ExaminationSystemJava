@@ -22,7 +22,7 @@ import wo1261931780.JOSPexaminationSystemJava.service.ReviewListService;
  * @description
  */
 @RestController
-@RequestMapping("/ReviewListAll")
+@RequestMapping("/review/list/all")
 public class ReviewListAllController {
 	@Autowired
 	private ReviewListService reviewListService;

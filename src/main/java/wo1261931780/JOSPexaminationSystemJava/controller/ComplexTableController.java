@@ -21,7 +21,7 @@ import wo1261931780.JOSPexaminationSystemJava.service.ComplexTableService;
  * @description
  */
 @RestController
-@RequestMapping("/vue-element-admin/article")
+@RequestMapping("/complex/table")
 public class ComplexTableController {
 	
 	@Autowired

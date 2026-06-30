@@ -33,7 +33,7 @@ import java.util.OptionalDouble;
  * @description
  */
 @RestController
-@RequestMapping("/AcademySubject")
+@RequestMapping("/academy/subject")
 @Slf4j
 public class AcademySubjectListController {
 	
@@ -66,7 +66,9 @@ public class AcademySubjectListController {
 		// 根据编号查询所有成绩
 		for (StudentInfo studentInfo : studentInfoList) {
 			ScoreInfo scoreInfo = scoreInfoService.getById(studentInfo.getId());
-			scoreInfos.add(scoreInfo);
+			if (scoreInfo != null) {
+				scoreInfos.add(scoreInfo);
+			}
 		}
 		// 成绩统计为list,计算各科均分,最高最低分
 		int[] checkedAverageScore = new int[scoreInfos.size()];
