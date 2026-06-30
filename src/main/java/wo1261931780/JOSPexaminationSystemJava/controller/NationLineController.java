@@ -41,7 +41,7 @@ public class NationLineController {
 		lambdaQueryWrapper.like(studentName != null, NationalLine::getSubjectClass, studentName);
 		lambdaQueryWrapper.like(NationalLine::getStudentClass, studentClass);
 		lambdaQueryWrapper.like(NationalLine::getDegreeType, degreeType);
-		if (sort.equals("0")) {
+		if ("0".equals(sort)) {
 			lambdaQueryWrapper.orderByAsc(NationalLine::getDegreeType).orderByDesc(NationalLine::getScoreTotal);
 		} else {
 			lambdaQueryWrapper.orderByAsc(NationalLine::getDegreeType).orderByAsc(NationalLine::getScoreTotal);

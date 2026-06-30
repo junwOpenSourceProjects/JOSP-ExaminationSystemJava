@@ -41,7 +41,7 @@ public class CollegeLineController {
 		LambdaQueryWrapper<CollegeLine> lambdaQueryWrapper = new LambdaQueryWrapper<>();
 		lambdaQueryWrapper.like(CollegeLine::getSubjectClass, subjectClass);
 		lambdaQueryWrapper.like(CollegeLine::getDegreeType, degreeType);
-		if (sort.equals("0")) {
+		if ("0".equals(sort)) {
 			lambdaQueryWrapper.orderByAsc(CollegeLine::getDegreeType).orderByDesc(CollegeLine::getScoreTotal);
 		} else {
 			lambdaQueryWrapper.orderByAsc(CollegeLine::getDegreeType).orderByAsc(CollegeLine::getScoreTotal);

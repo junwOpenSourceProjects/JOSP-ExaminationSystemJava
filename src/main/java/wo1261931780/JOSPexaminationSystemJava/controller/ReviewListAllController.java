@@ -38,7 +38,7 @@ public class ReviewListAllController {
 		LambdaQueryWrapper<ReviewList> lambdaQueryWrapper = new LambdaQueryWrapper<>();
 		lambdaQueryWrapper.like(studentName != null, ReviewList::getStudentName, studentName);
 		lambdaQueryWrapper.like(ReviewList::getSubjectCode, subjectCode);// 没有设置专业的时候查询所有
-		if (sort.equals("0")) {
+		if ("0".equals(sort)) {
 			lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
 		} else {
 			lambdaQueryWrapper.orderByAsc(ReviewList::getScoreTotal);

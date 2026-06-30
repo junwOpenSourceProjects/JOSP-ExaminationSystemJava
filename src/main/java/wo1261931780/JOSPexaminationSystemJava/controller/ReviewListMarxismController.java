@@ -65,7 +65,8 @@ public class ReviewListMarxismController {
 		//.or().like(ReviewList::getSubjectName, "科学技术史")
 		//.or().like(ReviewList::getSubjectName, "科学技术哲学");
 		// lambdaQueryWrapper.eq(ReviewList::getSubjectCode, subjectCode);
-		switch (sort) {
+		String safeSort = sort == null ? "0" : sort;
+		switch (safeSort) {
 			case "0":// 总分降序
 				lambdaQueryWrapper.orderByDesc(ReviewList::getScoreTotal);
 				break;

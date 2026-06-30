@@ -107,10 +107,15 @@ public class StudentInfoController {
 			// id关联查询成绩表
 			// 成绩表排名表返回各种数据
 			ScoreInfo scoreInfo = scoreInfoService.getById(studentCode);
-			BeanUtils.copyProperties(scoreInfo, studentListDTO);// 获取成绩数据，然后set进去
-			if (studentListDTO.getScoreTotal() == 0 || studentListDTO.getScoreTotal().equals("")) {// 使用hutu tool完成改造
+			if (scoreInfo != null) {
+				BeanUtils.copyProperties(scoreInfo, studentListDTO);// 获取成绩数据，然后set进去
+			}
+			Integer scoreTotal = studentListDTO.getScoreTotal();
+			if (scoreTotal == null || scoreTotal == 0) {
 				ScoreBakcup scoreBakcup = scoreBakcupService.getById(studentCode);
-				BeanUtils.copyProperties(scoreBakcup, studentListDTO);// 拷贝不存在的复试成绩
+				if (scoreBakcup != null) {
+					BeanUtils.copyProperties(scoreBakcup, studentListDTO);// 拷贝不存在的复试成绩
+				}
 			}
 			
 			// 获取排名数据
@@ -120,8 +125,8 @@ public class StudentInfoController {
 			// 获取学院表,根据学院代码去获取学院名称
 			LambdaQueryWrapper<College> collegeLambdaQueryWrapper = new LambdaQueryWrapper<>();
 			collegeLambdaQueryWrapper.eq(College::getAcademyCode, studentInfo.getAcademyCode());
-			String academyName = collegeService.getOne(collegeLambdaQueryWrapper).getAcademyName();
-			studentListDTO.setAcademyName(academyName);
+			College college = collegeService.getOne(collegeLambdaQueryWrapper);
+			studentListDTO.setAcademyName(college == null ? "" : college.getAcademyName());
 			
 			// 获取院线表
 			// 返回学院名，专业代码和专业名
